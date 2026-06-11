@@ -1,0 +1,28 @@
+{
+  "float": [
+    {
+      "name": "page_text_font_size",
+      "value": "24fp"
+    },
+    {
+      "name": "hud_font_size",
+      "value": "14fp"
+    },
+    {
+      "name": "hud_large_font_size",
+      "value": "20fp"
+    },
+    {
+      "name": "menu_title_font_size",
+      "value": "48fp"
+    },
+    {
+      "name": "menu_button_font_size",
+      "value": "20fp"
+    },
+    {
+      "name": "game_over_font_size",
+      "value": "36fp"
+    }
+  ]
+}

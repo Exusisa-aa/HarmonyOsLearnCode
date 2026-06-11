@@ -1,0 +1,13 @@
+1.使用了什么技术？
+由于数据较少，故直接本地读取，未配置库，只使用ARKTS读本地数据
+
+
+2.怎么实现的？
+创建工程后用openspec规定规范，满足api20，网易云的歌单风格等，具体规范文件在项目的openspec中，再用claudecode接deepseekv4pro，apply openspec的task.md，最后在改几个bug就开发完毕了,用时20分钟
+
+
+3.提问方式:
+3.1:cmd openspec init
+3.2:/openspec-propose 这是一个鸿蒙的音乐播放器，目前只有展示歌单的功能，我准备基于鸿蒙的api20完善这个音乐播放器，请帮我先创造提案
+3.3:/opsx:apply
+3.4:改一些bug，bug产生原因是claudecode使用api20的方法错误

@@ -1,0 +1,588 @@
+Ôr@Ÿªassertions¤code´customTransformCache¬dependencies¢id¤meta±moduleSideEffects¬originalCode±originalSourcemap«resolvedIds®sourcemapChainµsyntheticNamedExportsµtransformDependencies®transformFiles¨cacheAstÔrAÚimport { GameEntity, Direction } from './GameEntity';
+import { Bullet, BulletOwner } from './Bullet';
+import { TANK_WIDTH, TANK_HEIGHT, PLAYER_SPEED, PLAYER_SHOOT_COOLDOWN, ENEMY_BASIC_SPEED, ENEMY_FAST_SPEED, ENEMY_HEAVY_SPEED, ENEMY_BASIC_COOLDOWN, ENEMY_FAST_COOLDOWN, ENEMY_HEAVY_COOLDOWN, PLAYER_START_X, PLAYER_START_Y, PLAYER_INVINCIBLE_DURATION, COLOR_PLAYER_BODY, COLOR_PLAYER_HIGHLIGHT, COLOR_ENEMY_BASIC, COLOR_ENEMY_FAST, COLOR_ENEMY_HEAVY, COLOR_TRACK, COLOR_GUN } from '../util/Constants';
+import { RenderLayer } from '../engine/CanvasRenderer';
+export var EnemyType;
+(function (EnemyType) {
+    EnemyType[EnemyType["BASIC"] = 0] = "BASIC";
+    EnemyType[EnemyType["FAST"] = 1] = "FAST";
+    EnemyType[EnemyType["HEAVY"] = 2] = "HEAVY";
+})(EnemyType || (EnemyType = {}));
+export class Tank extends GameEntity {
+    constructor(x, y, speed, hp, cooldownMax) {
+        super(x, y, TANK_WIDTH, TANK_HEIGHT);
+        this.alive = true;
+        this.speed = speed;
+        this.direction = Direction.UP;
+        this.hp = hp;
+        this.maxHp = hp;
+        this.shootCooldown = 0;
+        this.shootCooldownMax = cooldownMax;
+        this.layer = RenderLayer.TANKS;
+    }
+    update(dt) {
+        if (this.shootCooldown > 0)
+            this.shootCooldown--;
+    }
+    canShoot() { return this.shootCooldown <= 0; }
+    shoot() {
+        if (!this.canShoot())
+            return null;
+        let bx = this.centerX - 5;
+        let by = this.centerY - 5;
+        let vx = 0, vy = 0;
+        switch (this.direction) {
+            case Direction.UP:
+                vy = -1;
+                by = this.y - 10;
+                break;
+            case Direction.DOWN:
+                vy = 1;
+                by = this.y + this.height;
+                break;
+            case Direction.LEFT:
+                vx = -1;
+                bx = this.x - 10;
+                break;
+            case Direction.RIGHT:
+                vx = 1;
+                bx = this.x + this.width;
+                break;
+        }
+        this.shootCooldown = this.shootCooldownMax;
+        return new Bullet(bx, by, vx, vy, this.getOwner());
+    }
+    takeDamage() {
+        this.hp--;
+        if (this.hp <= 0) {
+            this.alive = false;
+            this.isActive = false;
+            return true;
+        }
+        return false;
+    }
+    render(ctx) {
+        const bodyColor = this.getBodyColor();
+        const x = this.x, y = this.y, w = this.width, h = this.height;
+        const dir = this.direction;
+        // Tracks
+        ctx.fillStyle = COLOR_TRACK;
+        if (dir === Direction.UP || dir === Direction.DOWN) {
+            ctx.fillRect(x, y, 8, h);
+            ctx.fillRect(x + w - 8, y, 8, h);
+            ctx.fillStyle = '#000000';
+            for (let i = 2; i < h; i += 6) {
+                ctx.fillRect(x, y + i, 8, 2);
+                ctx.fillRect(x + w - 8, y + i, 8, 2);
+            }
+        }
+        else {
+            ctx.fillRect(x, y, w, 8);
+            ctx.fillRect(x, y + h - 8, w, 8);
+            ctx.fillStyle = '#000000';
+            for (let i = 2; i < w; i += 6) {
+                ctx.fillRect(x + i, y, 2, 8);
+                ctx.fillRect(x + i, y + h - 8, 2, 8);
+            }
+        }
+        // Body
+        ctx.fillStyle = bodyColor;
+        if (dir === Direction.UP || dir === Direction.DOWN) {
+            ctx.fillRect(x + 8, y + 4, w - 16, h - 8);
+        }
+        else {
+            ctx.fillRect(x + 4, y + 8, w - 8, h - 16);
+        }
+        // Turret base
+        ctx.fillStyle = this.getHighlightColor();
+        ctx.beginPath();
+        ctx.arc(x + w / 2, y + h / 2, 8, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = bodyColor;
+        ctx.beginPath();
+        ctx.arc(x + w / 2, y + h / 2, 4, 0, Math.PI * 2);
+        ctx.fill();
+        // Gun barrel
+        ctx.fillStyle = COLOR_GUN;
+        const cx = x + w / 2, cy = y + h / 2;
+        switch (dir) {
+            case Direction.UP:
+                ctx.fillRect(cx - 3, y - 4, 6, h / 2 + 4);
+                ctx.fillStyle = '#000';
+                ctx.fillRect(cx - 4, y - 4, 8, 4);
+                break;
+            case Direction.DOWN:
+                ctx.fillRect(cx - 3, cy, 6, h / 2 + 4);
+                ctx.fillStyle = '#000';
+                ctx.fillRect(cx - 4, y + h, 8, 4);
+                break;
+            case Direction.LEFT:
+                ctx.fillRect(x - 4, cy - 3, w / 2 + 4, 6);
+                ctx.fillStyle = '#000';
+                ctx.fillRect(x - 4, cy - 4, 4, 8);
+                break;
+            case Direction.RIGHT:
+                ctx.fillRect(cx, cy - 3, w / 2 + 4, 6);
+                ctx.fillStyle = '#000';
+                ctx.fillRect(x + w, cy - 4, 4, 8);
+                break;
+        }
+    }
+}
+// PlayerTank
+export class PlayerTank extends Tank {
+    constructor(x = PLAYER_START_X, y = PLAYER_START_Y) {
+        super(x, y, PLAYER_SPEED, 1, PLAYER_SHOOT_COOLDOWN);
+        this.invincibleTimer = 0;
+        this.speedBoosted = false;
+        this.shieldActive = false;
+        this.powerActive = false;
+        this.frozen = false;
+        this.direction = Direction.UP;
+    }
+    getOwner() { return BulletOwner.PLAYER; }
+    update(dt) {
+        super.update(dt);
+        if (this.invincibleTimer > 0)
+            this.invincibleTimer--;
+    }
+    get isInvincible() { return this.invincibleTimer > 0 || this.shieldActive; }
+    makeInvincible() { this.invincibleTimer = PLAYER_INVINCIBLE_DURATION; }
+    getBodyColor() { return COLOR_PLAYER_BODY; }
+    getHighlightColor() { return COLOR_PLAYER_HIGHLIGHT; }
+    render(ctx) {
+        // Blink during invincibility
+        if (this.isInvincible && Math.floor(this.invincibleTimer / 4) % 2 === 0)
+            return;
+        super.render(ctx);
+        // Shield visual
+        if (this.shieldActive) {
+            ctx.strokeStyle = '#4488FF';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.arc(this.centerX, this.centerY, this.width / 2 + 6, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.lineWidth = 1;
+        }
+    }
+}
+// EnemyTank
+export class EnemyTank extends Tank {
+    constructor(x, y, type = EnemyType.BASIC) {
+        let spd, cooldownMax, hp;
+        switch (type) {
+            case EnemyType.FAST:
+                spd = ENEMY_FAST_SPEED;
+                cooldownMax = ENEMY_FAST_COOLDOWN;
+                hp = 1;
+                break;
+            case EnemyType.HEAVY:
+                spd = ENEMY_HEAVY_SPEED;
+                cooldownMax = ENEMY_HEAVY_COOLDOWN;
+                hp = 3;
+                break;
+            default:
+                spd = ENEMY_BASIC_SPEED;
+                cooldownMax = ENEMY_BASIC_COOLDOWN;
+                hp = 1;
+                break;
+        }
+        super(x, y, spd, hp, cooldownMax);
+        this.frozen = false;
+        this.moveTimer = 0;
+        this.enemyType = type;
+        this.direction = Direction.DOWN;
+        this.shootCooldown = cooldownMax + Math.floor(Math.random() * cooldownMax);
+    }
+    getOwner() { return BulletOwner.ENEMY; }
+    getBodyColor() {
+        switch (this.enemyType) {
+            case EnemyType.FAST: return COLOR_ENEMY_FAST;
+            case EnemyType.HEAVY: return COLOR_ENEMY_HEAVY;
+            default: return COLOR_ENEMY_BASIC;
+        }
+    }
+    getHighlightColor() {
+        switch (this.enemyType) {
+            case EnemyType.FAST: return '#AAEEFF';
+            case EnemyType.HEAVY: return '#999999';
+            default: return '#EEEEEE';
+        }
+    }
+    get scoreValue() {
+        switch (this.enemyType) {
+            case EnemyType.FAST: return 200;
+            case EnemyType.HEAVY: return 300;
+            default: return 100;
+        }
+    }
+}
+//# sourceMappingURL=Tank.js.mapÂ”ÙXK:\study\HarmonyOs\code\chenminghui_BattleCiity\entry\src\main\ets\entity\GameEntity.etsÙTK:\study\HarmonyOs\code\chenminghui_BattleCiity\entry\src\main\ets\entity\Bullet.etsÙUK:\study\HarmonyOs\code\chenminghui_BattleCiity\entry\src\main\ets\util\Constants.etsÙ\K:\study\HarmonyOs\code\chenminghui_BattleCiity\entry\src\main\ets\engine\CanvasRenderer.etsÙRK:\study\HarmonyOs\code\chenminghui_BattleCiity\entry\src\main\ets\entity\Tank.etsÔrBœªmoduleName±isLocalDependency¯isNodeEntryFile§pkgPath±belongProjectPath§pkgNameªpkgVersion±dependencyPkgInfo¯hostModulesInfo°belongModulePath§checker¬shouldEmitJs¥entryÃÂÙ5K:\study\HarmonyOs\code\chenminghui_BattleCiity\entryÙ/K:\study\HarmonyOs\code\chenminghui_BattleCiity¥entry¥1.0.0Ô  “ÔrC’²hostDependencyName®hostModuleName­./entity/Tank¥entryC®../entity/Tank¥entryC®../entity/Tank¥entryÙ5K:\study\HarmonyOs\code\chenminghui_BattleCiity\entryÔrDÜ ®¬getNodeCount²getIdentifierCount®getSymbolCount¬getTypeCountµgetInstantiationCountµgetRelationCacheSizes±isUndefinedSymbol±isArgumentsSymbol¯isUnknownSymbol¯getMergedSymbol®getDiagnostics´getGlobalDiagnostics´getRecursionIdentity¶getUnmatchedProperties¹getTypeOfSymbolAtLocation¯getTypeOfSymbolÙ(getSymbolsOfParameterPropertyDeclaration·getDeclaredTypeOfSymbol³getPropertiesOfType±getPropertyOfTypeÙ"getPrivateIdentifierPropertyOfType·getTypeOfPropertyOfType²getIndexInfoOfType³getIndexInfosOfTypeºgetIndexInfosOfIndexSymbol³getSignaturesOfType²getIndexTypeOfType¬getIndexType¬getBaseTypes¸getBaseTypeOfLiteralType®getWidenedType³getTypeFromTypeNode°getParameterTypeÙ$getParameterIdentifierNameAtPosition¸getPromisedTypeOfPromise®getAwaitedType¸getReturnTypeOfSignature®isNullableType¯getNullableType²getNonNullableType²getNonOptionalType°getTypeArguments®typeToTypeNodeÙ$indexInfoToIndexSignatureDeclaration¿signatureToSignatureDeclaration²symbolToEntityName²symbolToExpression¬symbolToNodeÙ!symbolToTypeParameterDeclarations¼symbolToParameterDeclarationºtypeParameterToDeclaration±getSymbolsInScope³getSymbolAtLocation·getIndexInfosAtLocationÙ!getShorthandAssignmentValueSymbolÙ#getExportSpecifierLocalTargetSymbol·getExportSymbolOfSymbol±getTypeAtLocationºgetTypeAtLocationForLinterÙ tryGetTypeAtLocationWithoutCheckºgetTypeOfAssignmentPatternÙ*getPropertySymbolOfDestructuringAssignment±signatureToString¬typeToString®symbolToStringµtypePredicateToString®writeSignature©writeType«writeSymbol²writeTypePredicate¼getAugmentedPropertiesOfType®getRootSymbols²getSymbolOfExpando±getContextualTypeÙ(getContextualTypeForObjectLiteralElementÙ#getContextualTypeForArgumentAtIndexÙ getContextualTypeForJsxAttribute²isContextSensitiveÙ!getTypeOfPropertyOfContextualTypeµgetFullyQualifiedNameÙ#tryGetResolvedSignatureWithoutCheck´getResolvedSignatureÙ/getResolvedSignatureForStringLiteralCompletionsÙ$getResolvedSignatureForSignatureHelpµgetExpandedParameters¹hasEffectiveRestParameterºcontainsArgumentsReference°getConstantValueµisValidPropertyAccessÙ#isValidPropertyAccessForCompletions»getSignatureFromDeclarationºisImplementationOfOverload¹getImmediateAliasedSymbol°getAliasedSymbol¯getEmitResolver²getExportsOfModule¿getExportsAndPropertiesOfModuleÙ forEachExportAndPropertyOfModule¯getSymbolWalker±getAmbientModules¹getJsxIntrinsicTagNamesAt³isOptionalParameter»tryGetMemberInModuleExportsÙ(tryGetMemberInModuleExportsAndProperties´tryFindAmbientModuleÙ(tryFindAmbientModuleWithoutAugmentations¯getApparentType¬getUnionType²isTypeAssignableTo³createAnonymousType¯createSignature¬createSymbol¯createIndexInfoªgetAnyType­getStringType­getNumberType±createPromiseType¯createArrayType¹getElementTypeOfArrayType®getBooleanType¬getFalseType«getTrueType«getVoidType°getUndefinedType«getNullType¯getESSymbolType¬getNeverType¯getOptionalType®getPromiseType²getPromiseLikeType´getAsyncIterableType²isSymbolAccessible«isArrayType«isTupleType¯isArrayLikeTypeÙ#isTypeInvalidDueToUnionDiscriminantºgetExactOptionalProperties¿getAllPossiblePropertiesOfTypesÙ(getSuggestedSymbolForNonexistentPropertyÙ#getSuggestionForNonexistentPropertyÙ,getSuggestedSymbolForNonexistentJSXAttributeÙ&getSuggestedSymbolForNonexistentSymbolÙ!getSuggestionForNonexistentSymbolÙ&getSuggestedSymbolForNonexistentModuleÙ!getSuggestionForNonexistentExportÙ+getSuggestedSymbolForNonexistentClassMember·getBaseConstraintOfType»getDefaultFromTypeParameter«resolveName¯getJsxNamespaceµgetJsxFragmentFactory¸getAccessibleSymbolChain»getTypePredicateOfSignature¹resolveExternalModuleName»resolveExternalModuleSymbol°tryGetThisTypeAt¹getTypeArgumentConstraint¸getSuggestionDiagnostics¸runWithCancellationTokenÙ3getLocalTypeParametersOfClassOrInterfaceOrTypeAlias´isDeclarationVisible´isPropertyAccessible»getTypeOnlyAliasDeclaration¿getMemberOverrideModifierStatusÙ!isTypeParameterPossiblyReferenced²getConstEnumRelate´clearConstEnumRelateµdeleteConstEnumRelateÙ$getTypeArgumentsForResolvedSignatureµgetCheckedSourceFilesÙ"collectHaveTsNoCheckFilesForLinter·clearQualifiedNameCache®isStaticRecord²isStaticSourceFileÔ  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  ÃÃÚ¶import { GameEntity, Direction } from './GameEntity';
+import { Bullet, BulletOwner } from './Bullet';
+import {
+  TANK_WIDTH, TANK_HEIGHT, PLAYER_SPEED, PLAYER_SHOOT_COOLDOWN,
+  ENEMY_BASIC_SPEED, ENEMY_FAST_SPEED, ENEMY_HEAVY_SPEED,
+  ENEMY_BASIC_COOLDOWN, ENEMY_FAST_COOLDOWN, ENEMY_HEAVY_COOLDOWN,
+  PLAYER_START_X, PLAYER_START_Y, PLAYER_INVINCIBLE_DURATION,
+  COLOR_PLAYER_BODY, COLOR_PLAYER_HIGHLIGHT,
+  COLOR_ENEMY_BASIC, COLOR_ENEMY_FAST, COLOR_ENEMY_HEAVY,
+  COLOR_TRACK, COLOR_GUN
+} from '../util/Constants';
+import { RenderLayer } from '../engine/CanvasRenderer';
+
+export enum EnemyType {
+  BASIC, FAST, HEAVY
+}
+
+export abstract class Tank extends GameEntity {
+  speed: number;
+  direction: Direction;
+  hp: number;
+  maxHp: number;
+  shootCooldown: number;
+  shootCooldownMax: number;
+  alive: boolean = true;
+
+  constructor(x: number, y: number, speed: number, hp: number, cooldownMax: number) {
+    super(x, y, TANK_WIDTH, TANK_HEIGHT);
+    this.speed = speed;
+    this.direction = Direction.UP;
+    this.hp = hp;
+    this.maxHp = hp;
+    this.shootCooldown = 0;
+    this.shootCooldownMax = cooldownMax;
+    this.layer = RenderLayer.TANKS;
+  }
+
+  update(dt: number): void {
+    if (this.shootCooldown > 0) this.shootCooldown--;
+  }
+
+  canShoot(): boolean { return this.shootCooldown <= 0; }
+
+  shoot(): Bullet | null {
+    if (!this.canShoot()) return null;
+    let bx = this.centerX - 5;
+    let by = this.centerY - 5;
+    let vx = 0, vy = 0;
+
+    switch (this.direction) {
+      case Direction.UP:    vy = -1; by = this.y - 10; break;
+      case Direction.DOWN:  vy = 1;  by = this.y + this.height; break;
+      case Direction.LEFT:  vx = -1; bx = this.x - 10; break;
+      case Direction.RIGHT: vx = 1;  bx = this.x + this.width; break;
+    }
+    this.shootCooldown = this.shootCooldownMax;
+    return new Bullet(bx, by, vx, vy, this.getOwner());
+  }
+
+  abstract getOwner(): BulletOwner;
+
+  takeDamage(): boolean {
+    this.hp--;
+    if (this.hp <= 0) {
+      this.alive = false;
+      this.isActive = false;
+      return true;
+    }
+    return false;
+  }
+
+  render(ctx: CanvasRenderingContext2D): void {
+    const bodyColor = this.getBodyColor();
+    const x = this.x, y = this.y, w = this.width, h = this.height;
+    const dir = this.direction;
+
+    // Tracks
+    ctx.fillStyle = COLOR_TRACK;
+    if (dir === Direction.UP || dir === Direction.DOWN) {
+      ctx.fillRect(x, y, 8, h);
+      ctx.fillRect(x + w - 8, y, 8, h);
+      ctx.fillStyle = '#000000';
+      for (let i = 2; i < h; i += 6) {
+        ctx.fillRect(x, y + i, 8, 2);
+        ctx.fillRect(x + w - 8, y + i, 8, 2);
+      }
+    } else {
+      ctx.fillRect(x, y, w, 8);
+      ctx.fillRect(x, y + h - 8, w, 8);
+      ctx.fillStyle = '#000000';
+      for (let i = 2; i < w; i += 6) {
+        ctx.fillRect(x + i, y, 2, 8);
+        ctx.fillRect(x + i, y + h - 8, 2, 8);
+      }
+    }
+
+    // Body
+    ctx.fillStyle = bodyColor;
+    if (dir === Direction.UP || dir === Direction.DOWN) {
+      ctx.fillRect(x + 8, y + 4, w - 16, h - 8);
+    } else {
+      ctx.fillRect(x + 4, y + 8, w - 8, h - 16);
+    }
+
+    // Turret base
+    ctx.fillStyle = this.getHighlightColor();
+    ctx.beginPath();
+    ctx.arc(x + w / 2, y + h / 2, 8, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = bodyColor;
+    ctx.beginPath();
+    ctx.arc(x + w / 2, y + h / 2, 4, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Gun barrel
+    ctx.fillStyle = COLOR_GUN;
+    const cx = x + w / 2, cy = y + h / 2;
+    switch (dir) {
+      case Direction.UP:    ctx.fillRect(cx - 3, y - 4, 6, h / 2 + 4); ctx.fillStyle = '#000'; ctx.fillRect(cx - 4, y - 4, 8, 4); break;
+      case Direction.DOWN:  ctx.fillRect(cx - 3, cy, 6, h / 2 + 4); ctx.fillStyle = '#000'; ctx.fillRect(cx - 4, y + h, 8, 4); break;
+      case Direction.LEFT:  ctx.fillRect(x - 4, cy - 3, w / 2 + 4, 6); ctx.fillStyle = '#000'; ctx.fillRect(x - 4, cy - 4, 4, 8); break;
+      case Direction.RIGHT: ctx.fillRect(cx, cy - 3, w / 2 + 4, 6); ctx.fillStyle = '#000'; ctx.fillRect(x + w, cy - 4, 4, 8); break;
+    }
+  }
+
+  abstract getBodyColor(): string;
+  abstract getHighlightColor(): string;
+}
+
+// PlayerTank
+export class PlayerTank extends Tank {
+  invincibleTimer: number = 0;
+  speedBoosted: boolean = false;
+  shieldActive: boolean = false;
+  powerActive: boolean = false;
+  frozen: boolean = false;
+
+  constructor(x: number = PLAYER_START_X, y: number = PLAYER_START_Y) {
+    super(x, y, PLAYER_SPEED, 1, PLAYER_SHOOT_COOLDOWN);
+    this.direction = Direction.UP;
+  }
+
+  getOwner(): BulletOwner { return BulletOwner.PLAYER; }
+
+  update(dt: number): void {
+    super.update(dt);
+    if (this.invincibleTimer > 0) this.invincibleTimer--;
+  }
+
+  get isInvincible(): boolean { return this.invincibleTimer > 0 || this.shieldActive; }
+
+  makeInvincible(): void { this.invincibleTimer = PLAYER_INVINCIBLE_DURATION; }
+
+  getBodyColor(): string { return COLOR_PLAYER_BODY; }
+  getHighlightColor(): string { return COLOR_PLAYER_HIGHLIGHT; }
+
+  render(ctx: CanvasRenderingContext2D): void {
+    // Blink during invincibility
+    if (this.isInvincible && Math.floor(this.invincibleTimer / 4) % 2 === 0) return;
+    super.render(ctx);
+
+    // Shield visual
+    if (this.shieldActive) {
+      ctx.strokeStyle = '#4488FF';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.arc(this.centerX, this.centerY, this.width / 2 + 6, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.lineWidth = 1;
+    }
+  }
+}
+
+// EnemyTank
+export class EnemyTank extends Tank {
+  enemyType: EnemyType;
+  frozen: boolean = false;
+  moveTimer: number = 0;
+
+  constructor(x: number, y: number, type: EnemyType = EnemyType.BASIC) {
+    let spd: number, cooldownMax: number, hp: number;
+    switch (type) {
+      case EnemyType.FAST:
+        spd = ENEMY_FAST_SPEED; cooldownMax = ENEMY_FAST_COOLDOWN; hp = 1; break;
+      case EnemyType.HEAVY:
+        spd = ENEMY_HEAVY_SPEED; cooldownMax = ENEMY_HEAVY_COOLDOWN; hp = 3; break;
+      default:
+        spd = ENEMY_BASIC_SPEED; cooldownMax = ENEMY_BASIC_COOLDOWN; hp = 1; break;
+    }
+    super(x, y, spd, hp, cooldownMax);
+    this.enemyType = type;
+    this.direction = Direction.DOWN;
+    this.shootCooldown = cooldownMax + Math.floor(Math.random() * cooldownMax);
+  }
+
+  getOwner(): BulletOwner { return BulletOwner.ENEMY; }
+
+  getBodyColor(): string {
+    switch (this.enemyType) {
+      case EnemyType.FAST: return COLOR_ENEMY_FAST;
+      case EnemyType.HEAVY: return COLOR_ENEMY_HEAVY;
+      default: return COLOR_ENEMY_BASIC;
+    }
+  }
+
+  getHighlightColor(): string {
+    switch (this.enemyType) {
+      case EnemyType.FAST: return '#AAEEFF';
+      case EnemyType.HEAVY: return '#999999';
+      default: return '#EEEEEE';
+    }
+  }
+
+  get scoreValue(): number {
+    switch (this.enemyType) {
+      case EnemyType.FAST: return 200;
+      case EnemyType.HEAVY: return 300;
+      default: return 100;
+    }
+  }
+}
+ÀÔrE”¬./GameEntity±../util/Constants¸../engine/CanvasRenderer¨./BulletÔrF—ªassertions¨external¢id¤meta±moduleSideEffectsªresolvedByµsyntheticNamedExportsAÂÙXK:\study\HarmonyOs\code\chenminghui_BattleCiity\entry\src\main\ets\entity\GameEntity.etsAÃªoh-resolveÂFAÂÙUK:\study\HarmonyOs\code\chenminghui_BattleCiity\entry\src\main\ets\util\Constants.etsAÃªoh-resolveÂFAÂÙ\K:\study\HarmonyOs\code\chenminghui_BattleCiity\entry\src\main\ets\engine\CanvasRenderer.etsAÃªoh-resolveÂFAÂÙTK:\study\HarmonyOs\code\chenminghui_BattleCiity\entry\src\main\ets\entity\Bullet.etsAÃªoh-resolveÂ“ÔrG–§version¤fileªsourceRoot§sources¥names¨mappings§Tank.js ‘¨Tank.etsÜ Ûš”    ”  ”	  	”  ”  ”  ”    ”&  &”4  4”5  5š”   ” ”	 	” ” ” ” ”$ $”. .”/ /Ü .”   ” ”	 ” ” ”  ”" ”. '”0 )”ÌE >”ÌG ”ÌX ”ÌZ ”Ìj %”Ìl '”Ì} 8”Ì ”Ì“ ”Ì• ”Ì¨ +”Ìª -”Ì¾ ÌA”ÌÀ ”ÌÎ ”ÌĞ ”ÌŞ  ”Ìà "”Ìú <”Ìü ”Í ”Í ”Í% +”Í' ”Í8 ”Í: ”ÍJ %”ÍL '”Í] 8”Í_ 	”Íj 	”Íl 	”Íu 	”Íw 
+”Í} 
+”Í 
+”Í‘ 
+˜”   ” ”	 	” ” ” ”6 6”7 7•”   ” ”  ” ” “”   ” ” “” ”/ ”0 “” 	”- ”. “” ”/ ”0 —”   ” ” ” ” ” ”" –”   ” ” ” ” #”$ -›” ” ” ” ” "” $” 1” 3” =”! ?”, ÌRœ” ” 	” 
+” ” ” ” ” ”  ”+ '”, (”- )•” ” ” ” ” —” ” ” 	” ” ” ” ™” ” ” 	” ” ”" ”# ”% !”& "—” ” ” 	” ” ” ” —” ” ” 	” ” ” ” —”  ”  ”  	”  ”  ”  ”  —” !” !” !	” !”  !”+ !'”, !(™” "” "” "	” "” "”  "”! "”& ""”' "#’” #” #”” %”
+ %” %	” %—” &” &” &” &” &”! &”" &–” & ” &$” &%” &2”  &4”! &5’” '” 'œ” )” )
+” )” )” )#” )$”* )1”. )5”/ )6”0 )7”1 )8”2 )9’” +”	 +—” ,” ,” ,	” ,” ,” ,” ,”” ,” ,!” ,%” ,&š” -” -” -
+” -” -” -” -”  -”! -”" -š” .” .” .
+” .” .” .” .”  .”! .”" .š” /” /” /
+” /” /” /” /” /” /” /–” 1” 1” 1” 1” 1”  1•” 2” 2” 2” 2” 2–” 2” 2” 2!” 2"” 2#” 2$™” 2%” 2'” 2*” 2.” 2/” 20” 23”  25”! 26’” 27” 2=•” 3” 3” 3” 3” 3•” 3” 3” 3!” 3"” 3#›” 3%” 3'” 3*” 3.” 3/” 30” 33”" 37”# 38”) 3>”* 3?’” 3Ì@” 3ÌF•” 4” 4” 4” 4” 4–” 4” 4” 4!” 4"” 4#” 4$™” 4%” 4'” 4*” 4.” 4/” 40” 43”  45”! 46’” 47” 4=•” 5” 5” 5” 5”  5•” 5” 5” 5!” 5"” 5#›” 5%” 5'” 5*” 5.” 5/” 50” 53”" 57”# 58”( 5=”) 5>’” 5?” 5ÌE‘”	 6™” 7” 7” 7	” 7” 7”! 7”" 7”2 7.”3 7/Ü ” 8” 8” 8” 8” 8” 8” 8”  8”" 8”$ 8 ”& 8"”( 8$”* 8&”. 8*”/ 8+”7 83”9 85”: 86”; 87’” 9” 9’” =” =–” >” >” >	” >” >” >˜” ?” ?” ?” ?” ?” ?” ?” ?—” Ì@” Ì@
+” Ì@” Ì@” Ì@” Ì@” Ì@—” ÌA” ÌA
+” ÌA” ÌA” ÌA”! ÌA”" ÌA”” ÌB” ÌB” ÌB” ÌB‘”	 ÌC”” ÌD” ÌD” ÌD” ÌD’” ÌE” ÌE”” ÌG”
+ ÌG” ÌG	” ÌG&™” ÌH” ÌH
+” ÌH” ÌH” ÌH” ÌH”+ ÌH'”- ÌH)”. ÌH*Ü ” ÌI” ÌI
+” ÌI” ÌI” ÌI” ÌI” ÌI” ÌI” ÌI” ÌI”" ÌI”# ÌI”$ ÌI ”& ÌI"”' ÌI#”* ÌI&”. ÌI*”/ ÌI+”4 ÌI0”6 ÌI2”7 ÌI3”: ÌI6”> ÌI:”? ÌI;”ÌE ÌIÌA”ÌF ÌIÌB˜” ÌJ” ÌJ
+” ÌJ” ÌJ” ÌJ” ÌJ”" ÌJ”# ÌJ’” ÌL” ÌL—” ÌM” ÌM” ÌM” ÌM” ÌM”# ÌM”$ ÌM ” ÌN” ÌN” ÌN” ÌN” ÌN” ÌN”  ÌN”$ ÌN ”' ÌN#”, ÌN(”5 ÌN1”6 ÌN2”: ÌN6”< ÌN8” ÌO” ÌO	” ÌO
+” ÌO” ÌO” ÌO” ÌO” ÌO” ÌO”  ÌO”" ÌO”# ÌO”$ ÌO”% ÌOÜ ” ÌP” ÌP	” ÌP
+” ÌP” ÌP” ÌP” ÌP” ÌP”! ÌP”" ÌP”$ ÌP”% ÌP”' ÌP!”( ÌP"”* ÌP$”+ ÌP%”, ÌP&”- ÌP'—” ÌQ” ÌQ	” ÌQ
+” ÌQ” ÌQ”% ÌQ”& ÌQ Ÿ” ÌR” ÌR” ÌR” ÌR” ÌR” ÌR” ÌR” ÌR”  ÌR”! ÌR”# ÌR”$ ÌR”( ÌR"”) ÌR#”+ ÌR%Ü ” ÌS” ÌS” ÌS” ÌS” ÌS” ÌS”  ÌS”! ÌS”$ ÌS”% ÌS”' ÌS”( ÌS ”* ÌS"”+ ÌS#”, ÌS$”- ÌS%Ü ” ÌT” ÌT” ÌT” ÌT” ÌT” ÌT”! ÌT”" ÌT”% ÌT”& ÌT”( ÌT ”) ÌT!”, ÌT$”- ÌT%”/ ÌT'”0 ÌT(”2 ÌT*”3 ÌT+”4 ÌT,”5 ÌT-‘” ÌU‘”	 ÌV‘” ÌV” ÌW” ÌW	” ÌW
+” ÌW” ÌW” ÌW” ÌW” ÌW” ÌW”  ÌW”" ÌW”# ÌW”$ ÌW”% ÌWÜ ” ÌX” ÌX	” ÌX
+” ÌX” ÌX” ÌX” ÌX” ÌX”  ÌX”! ÌX”$ ÌX”% ÌX”' ÌX!”( ÌX"”* ÌX$”+ ÌX%”, ÌX&”- ÌX'—” ÌY” ÌY	” ÌY
+” ÌY” ÌY”% ÌY”& ÌY Ÿ” ÌZ” ÌZ” ÌZ” ÌZ” ÌZ” ÌZ” ÌZ” ÌZ”  ÌZ”! ÌZ”# ÌZ”$ ÌZ”( ÌZ"”) ÌZ#”+ ÌZ%Ü ” Ì[” Ì[” Ì[” Ì[” Ì[” Ì[”! Ì[”" Ì[”$ Ì[”% Ì[”' Ì[”( Ì[ ”* Ì["”+ Ì[#”, Ì[$”- Ì[%Ü ” Ì\” Ì\” Ì\” Ì\” Ì\” Ì\”! Ì\”" Ì\”$ Ì\”% Ì\”( Ì\ ”) Ì\!”, Ì\$”- Ì\%”/ Ì\'”0 Ì\(”2 Ì\*”3 Ì\+”4 Ì\,”5 Ì\-‘” Ì]‘”	 Ì^’” Ì`” Ì`—” Ìa” Ìa” Ìa” Ìa” Ìa”! Ìa”" Ìa” Ìb” Ìb” Ìb” Ìb” Ìb” Ìb”  Ìb”$ Ìb ”' Ìb#”, Ìb(”5 Ìb1”6 Ìb2”: Ìb6”< Ìb8Ü ” Ìc” Ìc	” Ìc
+” Ìc” Ìc” Ìc” Ìc” Ìc”  Ìc”! Ìc”$ Ìc”% Ìc”' Ìc!”( Ìc"”+ Ìc%”- Ìc'”/ Ìc)”0 Ìc*”3 Ìc-”4 Ìc.”5 Ìc/”6 Ìc0‘”	 Ìd‘” ÌdÜ ” Ìe” Ìe	” Ìe
+” Ìe” Ìe” Ìe” Ìe” Ìe”  Ìe”! Ìe”$ Ìe”% Ìe”' Ìe!”( Ìe"”+ Ìe%”, Ìe&”. Ìe(”/ Ìe)”2 Ìe,”4 Ìe.”5 Ìe/”6 Ìe0‘”	 Ìf’” Ìh” Ìhš” Ìi” Ìi” Ìi” Ìi” Ìi” Ìi” Ìi”. Ìi*”0 Ìi,”1 Ìi-–” Ìj” Ìj” Ìj” Ìj” Ìj” ÌjÜ ” Ìk” Ìk” Ìk” Ìk” Ìk” Ìk” Ìk” Ìk” Ìk” Ìk” Ìk” Ìk” Ìk”  Ìk”# Ìk”$ Ìk ”& Ìk"”' Ìk#”) Ìk%”* Ìk&”, Ìk(”0 Ìk,”1 Ìk-”3 Ìk/”6 Ìk2”7 Ìk3”8 Ìk4”9 Ìk5–” Ìl” Ìl” Ìl” Ìl” Ìl” Ìl—” Ìm” Ìm” Ìm” Ìm” Ìm”! Ìm”" Ìm–” Ìn” Ìn” Ìn” Ìn” Ìn” ÌnÜ ” Ìo” Ìo” Ìo” Ìo” Ìo” Ìo” Ìo” Ìo” Ìo” Ìo” Ìo” Ìo” Ìo”  Ìo”# Ìo”$ Ìo ”& Ìo"”' Ìo#”) Ìo%”* Ìo&”, Ìo(”0 Ìo,”1 Ìo-”3 Ìo/”6 Ìo2”7 Ìo3”8 Ìo4”9 Ìo5–” Ìp” Ìp” Ìp” Ìp” Ìp” Ìp’” Ìr” Ìr—” Ìs” Ìs” Ìs” Ìs” Ìs”! Ìs”" ÌsÜ ” Ìt” Ìt
+” Ìt” Ìt” Ìt” Ìt” Ìt” Ìt” Ìt” Ìt”  Ìt”# Ìt”$ Ìt ”' Ìt#”( Ìt$”+ Ìt'”, Ìt(”- Ìt)”” Ìu” Ìu” Ìu” Ìu•” Ìv” Ìv” Ìv” Ìv” ÌvÜ ” Ìv” Ìv” Ìv ” Ìv(” Ìv)” Ìv+”" Ìv.”# Ìv/”% Ìv1”& Ìv2”) Ìv5”* Ìv6”, Ìv8”- Ìv9”/ Ìv;”0 Ìv<”3 Ìv?”4 ÌvÌ@”7 ÌvÌC”8 ÌvÌD”9 ÌvÌE”: ÌvÌF—” ÌvÌG” ÌvÌJ” ÌvÌK” ÌvÌT”  ÌvÌW”& ÌvÌ]”' ÌvÌ^Ü ” ÌvÌ_” ÌvÌb” ÌvÌc” ÌvÌk” ÌvÌl” ÌvÌn”" ÌvÌq”# ÌvÌr”% ÌvÌt”& ÌvÌu”) ÌvÌx”* ÌvÌy”, ÌvÌ{”- ÌvÌ|”/ ÌvÌ~”0 ÌvÌ”1 ÌvÌ€”2 ÌvÌ’” ÌvÌ‚” ÌvÌˆ•” Ìw” Ìw” Ìw” Ìw” ÌwÜ ” Ìw” Ìw” Ìw ” Ìw(” Ìw)” Ìw+”" Ìw.”# Ìw/”% Ìw1”' Ìw3”) Ìw5”* Ìw6”, Ìw8”- Ìw9”0 Ìw<”1 Ìw=”4 ÌwÌ@”5 ÌwÌA”6 ÌwÌB”7 ÌwÌC—” ÌwÌD” ÌwÌG” ÌwÌH” ÌwÌQ”  ÌwÌT”& ÌwÌZ”' ÌwÌ[Ü ” ÌwÌ\” ÌwÌ_” ÌwÌ`” ÌwÌh” ÌwÌi” ÌwÌk”" ÌwÌn”# ÌwÌo”% ÌwÌq”& ÌwÌr”) ÌwÌu”* ÌwÌv”, ÌwÌx”- ÌwÌy”/ ÌwÌ{”0 ÌwÌ|”1 ÌwÌ}”2 ÌwÌ~’” ÌwÌ” ÌwÌ…•” Ìx” Ìx” Ìx” Ìx” ÌxÜ ” Ìx” Ìx” Ìx ” Ìx(” Ìx)” Ìx*”! Ìx-”" Ìx.”$ Ìx0”& Ìx2”) Ìx5”* Ìx6”, Ìx8”- Ìx9”0 Ìx<”1 Ìx=”4 ÌxÌ@”5 ÌxÌA”7 ÌxÌC”8 ÌxÌD”9 ÌxÌE”: ÌxÌF—” ÌxÌG” ÌxÌJ” ÌxÌK” ÌxÌT”  ÌxÌW”& ÌxÌ]”' ÌxÌ^Ü ” ÌxÌ_” ÌxÌb” ÌxÌc” ÌxÌk” ÌxÌl” ÌxÌm”! ÌxÌp”" ÌxÌq”$ ÌxÌs”& ÌxÌu”) ÌxÌx”* ÌxÌy”, ÌxÌ{”- ÌxÌ|”/ ÌxÌ~”0 ÌxÌ”1 ÌxÌ€”2 ÌxÌ’” ÌxÌ‚” ÌxÌˆ•” Ìy” Ìy” Ìy” Ìy”  ÌyÜ ” Ìy” Ìy” Ìy ” Ìy(” Ìy)” Ìy+”! Ìy-”# Ìy/”& Ìy2”' Ìy3”) Ìy5”* Ìy6”- Ìy9”. Ìy:”1 Ìy=”2 Ìy>”4 ÌyÌ@”5 ÌyÌA”6 ÌyÌB”7 ÌyÌC—” ÌyÌD” ÌyÌG” ÌyÌH” ÌyÌQ”  ÌyÌT”& ÌyÌZ”' ÌyÌ[Ü ” ÌyÌ\” ÌyÌ_” ÌyÌ`” ÌyÌh” ÌyÌi” ÌyÌj”! ÌyÌm”" ÌyÌn”$ ÌyÌp”& ÌyÌr”) ÌyÌu”* ÌyÌv”, ÌyÌx”- ÌyÌy”/ ÌyÌ{”0 ÌyÌ|”1 ÌyÌ}”2 ÌyÌ~’” ÌyÌ” ÌyÌ…‘”	 Ìz’” Ì{” Ì{‘” Ì’”  Ì ” Ì–”  Ì‚ ” Ì‚” Ì‚” Ì‚”  Ì‚ ”$ Ì‚$—” Ì‰” Ì‰” Ì‰”" Ì‰(”$ Ì‰*”( Ì‰6”6 Ì‰ÌD” ÌŠ” ÌŠ	” ÌŠ
+” ÌŠ” ÌŠ” ÌŠ” ÌŠ”  ÌŠ”" ÌŠ”# ÌŠ”% ÌŠ!”: ÌŠ6”; ÌŠ7”< ÌŠ8•” Ìƒ” Ìƒ” Ìƒ”  Ìƒ”! Ìƒ•” Ì„” Ì„” Ì„”! Ì„”" Ì„ •” Ì…” Ì…” Ì…”! Ì…”" Ì… •” Ì†” Ì†” Ì†”  Ì†”! Ì†•” Ì‡” Ì‡” Ì‡” Ì‡” Ì‡™” Ì‹” Ì‹” Ì‹	” Ì‹” Ì‹”" Ì‹”# Ì‹”% Ì‹!”& Ì‹"’” ÌŒ” ÌŒš” Ì” Ì
+” Ì” Ì#”# Ì.”$ Ì/”* Ì5”+ Ì6”, Ì7”- Ì8”” Ì”
+ Ì” Ì	” Ì˜” Ì‘” Ì‘	” Ì‘
+” Ì‘” Ì‘” Ì‘” Ì‘” Ì‘—” Ì’” Ì’” Ì’” Ì’”  Ì’”# Ì’”$ Ì’ –” Ì’"” Ì’&” Ì’'”  Ì’6”" Ì’8”# Ì’9’” Ì“” Ì“Ü ” Ì•” Ì•” Ì•” Ì• ”  Ì•'”$ Ì•+”% Ì•,”4 Ì•;”7 Ì•>”8 Ì•?”< Ì•ÌC”Ì@ Ì•ÌG”ÌA Ì•ÌH”ÌM Ì•ÌT”ÌN Ì•ÌU”ÌO Ì•ÌV”ÌP Ì•ÌW›” Ì—” Ì—” Ì—” Ì—” Ì— ”+ Ì—/”. Ì—2”ÌH Ì—ÌL”ÌI Ì—ÌM”ÌJ Ì—ÌN”ÌK Ì—ÌO˜” Ì™” Ì™” Ì™” Ì™"”- Ì™3”. Ì™4”/ Ì™5”0 Ì™6˜” Ìš” Ìš” Ìš ”! Ìš'”7 Ìš=”8 Ìš>”9 Ìš?”: ÌšÌ@”” Ìœ”
+ Ìœ” Ìœ	” Ìœ&’” Ì”% Ì!Ü ” Ì” Ì” Ì” Ì” Ì”! Ì”% Ì!”& Ì"”+ Ì'”, Ì(”0 Ì,”1 Ì-”Ì@ Ì<”ÌC Ì?”ÌD ÌÌ@”ÌE ÌÌA”ÌH ÌÌD”ÌI ÌÌE”ÌN ÌÌJ”ÌO ÌÌK’” ÌÌM” ÌÌT˜” ÌŸ” ÌŸ	” ÌŸ
+” ÌŸ” ÌŸ” ÌŸ” ÌŸ” ÌŸ’” Ì¡” Ì¡–” Ì¢” Ì¢” Ì¢” Ì¢” Ì¢” Ì¢—” Ì£” Ì£	” Ì£
+” Ì£” Ì£”' Ì£!”( Ì£"—” Ì¤” Ì¤	” Ì¤
+” Ì¤” Ì¤” Ì¤” Ì¤–” Ì¥” Ì¥	” Ì¥
+” Ì¥” Ì¥” Ì¥Ü ” Ì¦” Ì¦	” Ì¦
+” Ì¦” Ì¦” Ì¦” Ì¦”  Ì¦”" Ì¦”& Ì¦ ”' Ì¦!”. Ì¦(”0 Ì¦*”4 Ì¦.”5 Ì¦/”: Ì¦4”= Ì¦7”> Ì¦8”ÌA Ì¦;”ÌB Ì¦<”ÌD Ì¦>”ÌE Ì¦?”ÌG Ì¦ÌA”ÌK Ì¦ÌE”ÌL Ì¦ÌF”ÌN Ì¦ÌH”ÌQ Ì¦ÌK”ÌR Ì¦ÌL”ÌS Ì¦ÌM”ÌT Ì¦ÌN–” Ì§” Ì§	” Ì§
+” Ì§” Ì§” Ì§—” Ì¨” Ì¨	” Ì¨
+” Ì¨” Ì¨” Ì¨” Ì¨‘”	 Ì©’” Ìª” Ìª‘” Ì«’”  Ì­ ” Ì­–”  Ì® ” Ì®” Ì®” Ì®” Ì®”# Ì®#š” Ì³” Ì³” Ì³” Ì³” Ì³"” Ì³$” Ì³6”& Ì³?”' Ì³Ì@”, Ì³ÌE˜” Ì´” Ì´” Ì´” Ì´” Ì´(” Ì´*”  Ì´4”! Ì´5”” Ìµ” Ìµ” Ìµ” Ìµ•” Ì¶” Ì¶” Ì¶” Ì¶” Ì¶•” Ì·” Ì·” Ì·”& Ì·”' Ì·•” Ì· ” Ì·+” Ì·.”1 Ì·ÌA”2 Ì·ÌB•” Ì·ÌC” Ì·ÌE” Ì·ÌH” Ì·ÌI” Ì·ÌJ’” Ì·ÌK” Ì·ÌQ•” Ì¸” Ì¸” Ì¸” Ì¸”  Ì¸•” Ì¹” Ì¹” Ì¹”' Ì¹”( Ì¹ •” Ì¹!” Ì¹,” Ì¹/”2 Ì¹ÌC”3 Ì¹ÌD•” Ì¹ÌE” Ì¹ÌG” Ì¹ÌJ” Ì¹ÌK” Ì¹ÌL’” Ì¹ÌM” Ì¹ÌS‘” Ìº•” Ì»” Ì»” Ì»”' Ì»”( Ì» •” Ì»!” Ì»,” Ì»/”2 Ì»ÌC”3 Ì»ÌD•” Ì»ÌE” Ì»ÌG” Ì»ÌJ” Ì»ÌK” Ì»ÌL’” Ì»ÌM” Ì»ÌS‘”	 Ì¼” Ì½” Ì½	” Ì½
+” Ì½” Ì½” Ì½” Ì½” Ì½” Ì½” Ì½” Ì½”( Ì½$”) Ì½%”* Ì½&•” Ì°” Ì°” Ì°” Ì°” Ì°•” Ì±” Ì±” Ì±” Ì±” Ì±—” Ì¾” Ì¾” Ì¾	” Ì¾” Ì¾” Ì¾” Ì¾™” Ì¿” Ì¿” Ì¿	” Ì¿” Ì¿”" Ì¿”# Ì¿”' Ì¿#”( Ì¿$Ü ” ÌÀ” ÌÀ” ÌÀ	” ÌÀ” ÌÀ”( ÌÀ$”+ ÌÀ'”/ ÌÀ+”0 ÌÀ,”5 ÌÀ1”6 ÌÀ2”: ÌÀ6”; ÌÀ7”ÌA ÌÀ=”ÌC ÌÀ?”ÌF ÌÀÌB”ÌQ ÌÀÌM”ÌR ÌÀÌN”ÌS ÌÀÌO’” ÌÁ” ÌÁš” ÌÃ” ÌÃ
+” ÌÃ” ÌÃ#”# ÌÃ.”$ ÌÃ/”) ÌÃ4”* ÌÃ5”+ ÌÃ6”, ÌÃ7’” ÌÅ” ÌÅ–” ÌÆ” ÌÆ” ÌÆ” ÌÆ” ÌÆ”  ÌÆš” ÌÇ” ÌÇ” ÌÇ” ÌÇ” ÌÇ”  ÌÇ”! ÌÇ”( ÌÇ"”8 ÌÇ2”9 ÌÇ3š” ÌÈ” ÌÈ” ÌÈ” ÌÈ”  ÌÈ”! ÌÈ”" ÌÈ”) ÌÈ#”: ÌÈ4”; ÌÈ5—” ÌÉ” ÌÉ” ÌÉ” ÌÉ” ÌÉ”- ÌÉ'”. ÌÉ(‘”	 ÌÊ’” ÌË” ÌË’” ÌÍ” ÌÍ–” ÌÎ” ÌÎ” ÌÎ” ÌÎ” ÌÎ”  ÌÎš” ÌÏ” ÌÏ” ÌÏ” ÌÏ” ÌÏ”  ÌÏ”! ÌÏ”( ÌÏ"”1 ÌÏ+”2 ÌÏ,š” ÌĞ” ÌĞ” ÌĞ” ÌĞ”  ÌĞ”! ÌĞ”" ÌĞ”) ÌĞ#”2 ÌĞ,”3 ÌĞ-—” ÌÑ” ÌÑ” ÌÑ” ÌÑ” ÌÑ”% ÌÑ”& ÌÑ ‘”	 ÌÒ’” ÌÓ” ÌÓ“” ÌÕ” ÌÕ” ÌÕ–” ÌÖ” ÌÖ” ÌÖ” ÌÖ” ÌÖ”  ÌÖš” Ì×” Ì×” Ì×” Ì×” Ì×”  Ì×”! Ì×”( Ì×"”+ Ì×%”, Ì×&š” ÌØ” ÌØ” ÌØ” ÌØ”  ÌØ”! ÌØ”" ÌØ”) ÌØ#”, ÌØ&”- ÌØ'—” ÌÙ” ÌÙ” ÌÙ” ÌÙ” ÌÙ” ÌÙ”  ÌÙ‘”	 ÌÚ’” ÌÛ” ÌÛ‘” ÌÜÔrH–§version¤file§sources®sourcesContent¥names¨mappingsÀ‘À‘ÀÜ Ü‘”    ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”  	 ‘”  
+ ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”    ‘”  ! ‘”  " ‘”  # ‘”  $ ‘”  % ‘”  & ‘”  ' ‘”  ( ‘”  ) ‘”  * ‘”  + ‘”  , ‘”  - ‘”  . ‘”  / ‘”  0 ‘”  1 ‘”  2 ‘”  3 ‘”  4 ‘”  5 ‘”  6 ‘”  7 ‘”  8 ‘”  9 ‘”  : ‘”  ; ‘”  < ‘”  = ‘”  > ‘”  ? ‘”  Ì@ ‘”  ÌA ‘”  ÌB ‘”  ÌC ‘”  ÌD ‘”  ÌE ‘”  ÌF ‘”  ÌG ‘”  ÌH ‘”  ÌI ‘”  ÌJ ‘”  ÌK ‘”  ÌL ‘”  ÌM ‘”  ÌN ‘”  ÌO ‘”  ÌP ‘”  ÌQ ‘”  ÌR ‘”  ÌS ‘”  ÌT ‘”  ÌU ‘”  ÌV ‘”  ÌW ‘”  ÌX ‘”  ÌY ‘”  ÌZ ‘”  Ì[ ‘”  Ì\ ‘”  Ì] ‘”  Ì^ ‘”  Ì_ ‘”  Ì` ‘”  Ìa ‘”  Ìb ‘”  Ìc ‘”  Ìd ‘”  Ìe ‘”  Ìf ‘”  Ìg ‘”  Ìh ‘”  Ìi ‘”  Ìj ‘”  Ìk ‘”  Ìl ‘”  Ìm ‘”  Ìn ‘”  Ìo ‘”  Ìp ‘”  Ìq ‘”  Ìr ‘”  Ìs ‘”  Ìt ‘”  Ìu ‘”  Ìv ‘”  Ìw ‘”  Ìx ‘”  Ìy ‘”  Ìz ‘”  Ì{ ‘”  Ì| ‘”  Ì} ‘”  Ì~ ‘”  Ì ‘”  Ì€ ‘”  Ì ‘”  Ì‚ ‘”  Ìƒ ‘”  Ì„ ‘”  Ì… ‘”  Ì† ‘”  Ì‡ ‘”  Ìˆ ‘”  Ì‰ ‘”  ÌŠ ‘”  Ì‹ ‘”  ÌŒ ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì‘ ‘”  Ì’ ‘”  Ì“ ‘”  Ì” ‘”  Ì• ‘”  Ì– ‘”  Ì— ‘”  Ì˜ ‘”  Ì™ ‘”  Ìš ‘”  Ì› ‘”  Ìœ ‘”  Ì ‘”  Ì ‘”  ÌŸ ‘”  Ì  ‘”  Ì¡ ‘”  Ì¢ ‘”  Ì£ ‘”  Ì¤ ‘”  Ì¥ ‘”  Ì¦ ‘”  Ì§ ‘”  Ì¨ ‘”  Ì© ‘”  Ìª ‘”  Ì« ‘”  Ì¬ ‘”  Ì­ ‘”  Ì® ‘”  Ì¯ ‘”  Ì° ‘”  Ì± ‘”  Ì² ‘”  Ì³ ‘”  Ì´ ‘”  Ìµ ‘”  Ì¶ ‘”  Ì· ‘”  Ì¸ ‘”  Ì¹ ‘”  Ìº ‘”  Ì» ‘”  Ì¼ ‘”  Ì½ ‘”  Ì¾ ‘”  Ì¿ ‘”  ÌÀ ‘”  ÌÁ ‘”  ÌÂ ‘”  ÌÃ ‘”  ÌÄ ‘”  ÌÅ ‘”  ÌÆ ‘”  ÌÇ ‘”  ÌÈ ‘”  ÌÉ ‘”  ÌÊ ‘”  ÌË ‘”  ÌÌ ‘”  ÌÍ ‘”  ÌÎ ‘”  ÌÏ ‘”  ÌĞ ‘”  ÌÑ ‘”  ÌÒ ‘”  ÌÓ ‘”  ÌÔ ‘”  ÌÕ ‘”  ÌÖ ‘”  Ì× ‘”  ÌØ ‘”  ÌÙ ‘”  ÌÚ ‘”  ÌÛ ÔrI’§missing¦pluginÃ¦genAbcÂÔ  ÔrJ”²dynamicImportCache¹exportAllDeclarationCache»exportNamedDeclarationCache«importCache”ÔrK–¤type¥start£end«declarationªspecifiers¦source¶ExportNamedDeclarationÍ4ÍIÔrL•¤type¥start£end¬declarations¤kind³VariableDeclarationÍ;ÍI‘ÔrM•¤type¥start£end¢id¤init²VariableDeclaratorÍ?ÍHÔrN”¤type¥start£end¤nameªIdentifierÍ?ÍH©EnemyTypeÀ£varÀK¶ExportNamedDeclarationÍÍÔrO–¤type¥start£end¢idªsuperClass¤body°ClassDeclarationÍ#ÍNªIdentifierÍ)Í-¤TankNªIdentifierÍ6Í@ªGameEntityÔrP”¤type¥start£end¤body©ClassBodyÍAÍ–ÔrQ˜¤type¥start£end¦static¨computed£key¤kind¥value°MethodDefinitionÍHÍ³ÂÂNªIdentifierÍHÍS«constructor«constructorÔrR™¤type¥start£end¢idªexpression©generator¥async¦params¤body²FunctionExpressionÍSÍ³ÀÂÂÂ•NªIdentifierÍTÍU¡xNªIdentifierÍWÍX¡yNªIdentifierÍZÍ_¥speedNªIdentifierÍaÍc¢hpNªIdentifierÍeÍp«cooldownMaxP®BlockStatementÍrÍ³™ÔrS”¤type¥start£endªexpression³ExpressionStatementÍ}Í¢ÔrT–¤type¥start£end¦callee©arguments¨optional®CallExpressionÍ}Í¡ÔrU“¤type¥start£end¥SuperÍ}Í‚”NªIdentifierÍƒÍ„¡xNªIdentifierÍ†Í‡¡yNªIdentifierÍ‰Í“ªTANK_WIDTHNªIdentifierÍ•Í «TANK_HEIGHTÂS³ExpressionStatementÍ¬Í¾ÔrV–¤type¥start£end¨operator¤left¥right´AssignmentExpressionÍ¬Í½¡=ÔrW—¤type¥start£end¦object¨property¨computed¨optional°MemberExpressionÍ¬Í¶U®ThisExpressionÍ¬Í°NªIdentifierÍ±Í¶¥aliveÂÂÔrX•¤type¥start£end¥value£raw§LiteralÍ¹Í½Ã¤trueS³ExpressionStatementÍÈÍÛV´AssignmentExpressionÍÈÍÚ¡=W°MemberExpressionÍÈÍÒU®ThisExpressionÍÈÍÌNªIdentifierÍÍÍÒ¥speedÂÂNªIdentifierÍÕÍÚ¥speedS³ExpressionStatementÍåÍV´AssignmentExpressionÍåÍ¡=W°MemberExpressionÍåÍóU®ThisExpressionÍåÍéNªIdentifierÍêÍó©directionÂÂW°MemberExpressionÍöÍNªIdentifierÍöÍÿ©DirectionNªIdentifierÍ Í¢UPÂÂS³ExpressionStatementÍÍV´AssignmentExpressionÍÍ¡=W°MemberExpressionÍÍU®ThisExpressionÍÍNªIdentifierÍÍ¢hpÂÂNªIdentifierÍÍ¢hpS³ExpressionStatementÍ$Í4V´AssignmentExpressionÍ$Í3¡=W°MemberExpressionÍ$Í.U®ThisExpressionÍ$Í(NªIdentifierÍ)Í.¥maxHpÂÂNªIdentifierÍ1Í3¢hpS³ExpressionStatementÍ>ÍUV´AssignmentExpressionÍ>ÍT¡=W°MemberExpressionÍ>ÍPU®ThisExpressionÍ>ÍBNªIdentifierÍCÍP­shootCooldownÂÂX§LiteralÍSÍT ¡0S³ExpressionStatementÍ_ÍƒV´AssignmentExpressionÍ_Í‚¡=W°MemberExpressionÍ_ÍtU®ThisExpressionÍ_ÍcNªIdentifierÍdÍt°shootCooldownMaxÂÂNªIdentifierÍwÍ‚«cooldownMaxS³ExpressionStatementÍÍ¬V´AssignmentExpressionÍÍ«¡=W°MemberExpressionÍÍ—U®ThisExpressionÍÍ‘NªIdentifierÍ’Í—¥layerÂÂW°MemberExpressionÍšÍ«NªIdentifierÍšÍ¥«RenderLayerNªIdentifierÍ¦Í«¥TANKSÂÂQ°MethodDefinitionÍ¹ÍÂÂNªIdentifierÍ¹Í¿¦update¦methodR²FunctionExpressionÍ¿ÍÀÂÂÂ‘NªIdentifierÍÀÍÂ¢dtP®BlockStatementÍÄÍ‘ÔrY–¤type¥start£end¤testªconsequent©alternate«IfStatementÍÏÍÔrZ–¤type¥start£end¤left¨operator¥right°BinaryExpressionÍÓÍéW°MemberExpressionÍÓÍåU®ThisExpressionÍÓÍ×NªIdentifierÍØÍå­shootCooldownÂÂ¡>X§LiteralÍèÍé ¡0S³ExpressionStatementÍøÍÔr[–¤type¥start£end¨operator¦prefix¨argument°UpdateExpressionÍøÍ¢--ÂW°MemberExpressionÍøÍ
+U®ThisExpressionÍøÍüNªIdentifierÍıÍ
+­shootCooldownÂÂÀQ°MethodDefinitionÍÍHÂÂNªIdentifierÍÍ"¨canShoot¦methodR²FunctionExpressionÍ"ÍHÀÂÂÂP®BlockStatementÍ%ÍH‘Ôr\”¤type¥start£end¨argument¯ReturnStatementÍ'ÍFZ°BinaryExpressionÍ.ÍEW°MemberExpressionÍ.Í@U®ThisExpressionÍ.Í2NªIdentifierÍ3Í@­shootCooldownÂÂ¢<=X§LiteralÍDÍE ¡0Q°MethodDefinitionÍNÍ†ÂÂNªIdentifierÍNÍS¥shoot¦methodR²FunctionExpressionÍSÍ†ÀÂÂÂP®BlockStatementÍVÍ†—Y«IfStatementÍaÍ[¯UnaryExpressionÍeÍu¡!ÃT®CallExpressionÍfÍuW°MemberExpressionÍfÍsU®ThisExpressionÍfÍjNªIdentifierÍkÍs¨canShootÂÂÂ\¯ReturnStatementÍ„ÍX§LiteralÍ‹ÍÀ¤nullÀL³VariableDeclarationÍšÍ´‘M²VariableDeclaratorÍÍ³NªIdentifierÍÍ ¢bxZ°BinaryExpressionÍ£Í³W°MemberExpressionÍ£Í¯U®ThisExpressionÍ£Í§NªIdentifierÍ¨Í¯§centerXÂÂ¡-X§LiteralÍ²Í³¡5£letL³VariableDeclarationÍ¾ÍØ‘M²VariableDeclaratorÍÂÍ×NªIdentifierÍÂÍÄ¢byZ°BinaryExpressionÍÇÍ×W°MemberExpressionÍÇÍÓU®ThisExpressionÍÇÍËNªIdentifierÍÌÍÓ§centerYÂÂ¡-X§LiteralÍÖÍ×¡5£letL³VariableDeclarationÍâÍõ’M²VariableDeclaratorÍæÍìNªIdentifierÍæÍè¢vxX§LiteralÍëÍì ¡0M²VariableDeclaratorÍîÍôNªIdentifierÍîÍğ¢vyX§LiteralÍóÍô ¡0£letÔr]•¤type¥start£end¬discriminant¥cases¯SwitchStatementÍÿÍW°MemberExpressionÍÍU®ThisExpressionÍÍNªIdentifierÍÍ©directionÂÂ”Ôr^•¤type¥start£endªconsequent¤testªSwitchCaseÍ&Í“S³ExpressionStatementÍJÍRV´AssignmentExpressionÍJÍQ¡=NªIdentifierÍJÍL¢vy[¯UnaryExpressionÍOÍQ¡-ÃX§LiteralÍPÍQ¡1S³ExpressionStatementÍdÍuV´AssignmentExpressionÍdÍt¡=NªIdentifierÍdÍf¢byZ°BinaryExpressionÍiÍtW°MemberExpressionÍiÍoU®ThisExpressionÍiÍmNªIdentifierÍnÍo¡yÂÂ¡-X§LiteralÍrÍt
+¢10Ôr_”¤type¥start£end¥label®BreakStatementÍ‡ÍÀW°MemberExpressionÍ+Í7NªIdentifierÍ+Í4©DirectionNªIdentifierÍ5Í7¢UPÂÂ^ªSwitchCaseÍ›Í“S³ExpressionStatementÍÁÍÈV´AssignmentExpressionÍÁÍÇ¡=NªIdentifierÍÁÍÃ¢vyX§LiteralÍÆÍÇ¡1S³ExpressionStatementÍÚÍôV´AssignmentExpressionÍÚÍó¡=NªIdentifierÍÚÍÜ¢byZ°BinaryExpressionÍßÍóW°MemberExpressionÍßÍåU®ThisExpressionÍßÍãNªIdentifierÍäÍå¡yÂÂ¡+W°MemberExpressionÍèÍóU®ThisExpressionÍèÍìNªIdentifierÍíÍó¦heightÂÂ_®BreakStatementÍÍÀW°MemberExpressionÍ Í®NªIdentifierÍ Í©©DirectionNªIdentifierÍªÍ®¤DOWNÂÂ^ªSwitchCaseÍÍƒ“S³ExpressionStatementÍ@ÍHV´AssignmentExpressionÍ@ÍG¡=NªIdentifierÍ@ÍB¢vx[¯UnaryExpressionÍEÍG¡-ÃX§LiteralÍFÍG¡1S³ExpressionStatementÍZÍkV´AssignmentExpressionÍZÍj¡=NªIdentifierÍZÍ\¢bxZ°BinaryExpressionÍ_ÍjW°MemberExpressionÍ_ÍeU®ThisExpressionÍ_ÍcNªIdentifierÍdÍe¡xÂÂ¡-X§LiteralÍhÍj
+¢10_®BreakStatementÍ}ÍƒÀW°MemberExpressionÍÍ-NªIdentifierÍÍ(©DirectionNªIdentifierÍ)Í-¤LEFTÂÂ^ªSwitchCaseÍ‘Í“S³ExpressionStatementÍ¸Í¿V´AssignmentExpressionÍ¸Í¾¡=NªIdentifierÍ¸Íº¢vxX§LiteralÍ½Í¾¡1S³ExpressionStatementÍÑÍêV´AssignmentExpressionÍÑÍé¡=NªIdentifierÍÑÍÓ¢bxZ°BinaryExpressionÍÖÍéW°MemberExpressionÍÖÍÜU®ThisExpressionÍÖÍÚNªIdentifierÍÛÍÜ¡xÂÂ¡+W°MemberExpressionÍßÍéU®ThisExpressionÍßÍãNªIdentifierÍäÍé¥widthÂÂ_®BreakStatementÍüÍÀW°MemberExpressionÍ–Í¥NªIdentifierÍ–ÍŸ©DirectionNªIdentifierÍ Í¥¥RIGHTÂÂS³ExpressionStatementÍÍBV´AssignmentExpressionÍÍA¡=W°MemberExpressionÍÍ)U®ThisExpressionÍÍNªIdentifierÍÍ)­shootCooldownÂÂW°MemberExpressionÍ,ÍAU®ThisExpressionÍ,Í0NªIdentifierÍ1ÍA°shootCooldownMaxÂÂ\¯ReturnStatementÍLÍÔr`•¤type¥start£end¦callee©arguments­NewExpressionÍSÍ~NªIdentifierÍWÍ]¦Bullet•NªIdentifierÍ^Í`¢bxNªIdentifierÍbÍd¢byNªIdentifierÍfÍh¢vxNªIdentifierÍjÍl¢vyT®CallExpressionÍnÍ}W°MemberExpressionÍnÍ{U®ThisExpressionÍnÍrNªIdentifierÍsÍ{¨getOwnerÂÂÂQ°MethodDefinitionÍŒÍ	SÂÂNªIdentifierÍŒÍ–ªtakeDamage¦methodR²FunctionExpressionÍ–Í	SÀÂÂÂP®BlockStatementÍ™Í	S“S³ExpressionStatementÍ¤Í®[°UpdateExpressionÍ¤Í­¢--ÂW°MemberExpressionÍ¤Í«U®ThisExpressionÍ¤Í¨NªIdentifierÍ©Í«¢hpÂÂY«IfStatementÍ¸Í	5Z°BinaryExpressionÍ¼ÍÈW°MemberExpressionÍ¼ÍÃU®ThisExpressionÍ¼ÍÀNªIdentifierÍÁÍÃ¢hpÂÂ¢<=X§LiteralÍÇÍÈ ¡0P®BlockStatementÍÊÍ	5“S³ExpressionStatementÍÙÍìV´AssignmentExpressionÍÙÍë¡=W°MemberExpressionÍÙÍãU®ThisExpressionÍÙÍİNªIdentifierÍŞÍã¥aliveÂÂX§LiteralÍæÍëÂ¥falseS³ExpressionStatementÍúÍ	V´AssignmentExpressionÍúÍ	¡=W°MemberExpressionÍúÍ	U®ThisExpressionÍúÍşNªIdentifierÍÿÍ	¨isActiveÂÂX§LiteralÍ	
+Í	Â¥false\¯ReturnStatementÍ	Í	*X§LiteralÍ	%Í	)Ã¤trueÀ\¯ReturnStatementÍ	?Í	LX§LiteralÍ	FÍ	KÂ¥falseQ°MethodDefinitionÍ	YÍ	ÂÂNªIdentifierÍ	YÍ	_¦render¦methodR²FunctionExpressionÍ	_Í	ÀÂÂÂ‘NªIdentifierÍ	`Í	c£ctxP®BlockStatementÍ	eÍ	Ü L³VariableDeclarationÍ	pÍ	–‘M²VariableDeclaratorÍ	vÍ	•NªIdentifierÍ	vÍ	©bodyColorT®CallExpressionÍ	‚Í	•W°MemberExpressionÍ	‚Í	“U®ThisExpressionÍ	‚Í	†NªIdentifierÍ	‡Í	“¬getBodyColorÂÂÂ¥constL³VariableDeclarationÍ	 Í	Ş”M²VariableDeclaratorÍ	¦Í	°NªIdentifierÍ	¦Í	§¡xW°MemberExpressionÍ	ªÍ	°U®ThisExpressionÍ	ªÍ	®NªIdentifierÍ	¯Í	°¡xÂÂM²VariableDeclaratorÍ	²Í	¼NªIdentifierÍ	²Í	³¡yW°MemberExpressionÍ	¶Í	¼U®ThisExpressionÍ	¶Í	ºNªIdentifierÍ	»Í	¼¡yÂÂM²VariableDeclaratorÍ	¾Í	ÌNªIdentifierÍ	¾Í	¿¡wW°MemberExpressionÍ	ÂÍ	ÌU®ThisExpressionÍ	ÂÍ	ÆNªIdentifierÍ	ÇÍ	Ì¥widthÂÂM²VariableDeclaratorÍ	ÎÍ	İNªIdentifierÍ	ÎÍ	Ï¡hW°MemberExpressionÍ	ÒÍ	İU®ThisExpressionÍ	ÒÍ	ÖNªIdentifierÍ	×Í	İ¦heightÂÂ¥constL³VariableDeclarationÍ	èÍ
+‘M²VariableDeclaratorÍ	îÍ
+NªIdentifierÍ	îÍ	ñ£dirW°MemberExpressionÍ	ôÍ
+U®ThisExpressionÍ	ôÍ	øNªIdentifierÍ	ùÍ
+©directionÂÂ¥constS³ExpressionStatementÍ
+ Í
+<V´AssignmentExpressionÍ
+ Í
+;¡=W°MemberExpressionÍ
+ Í
+-NªIdentifierÍ
+ Í
+#£ctxNªIdentifierÍ
+$Í
+-©fillStyleÂÂNªIdentifierÍ
+0Í
+;«COLOR_TRACKY«IfStatementÍ
+FÍãZ±LogicalExpressionÍ
+JÍ
+xZ°BinaryExpressionÍ
+JÍ
+^NªIdentifierÍ
+JÍ
+M£dir£===W°MemberExpressionÍ
+RÍ
+^NªIdentifierÍ
+RÍ
+[©DirectionNªIdentifierÍ
+\Í
+^¢UPÂÂ¢||Z°BinaryExpressionÍ
+bÍ
+xNªIdentifierÍ
+bÍ
+e£dir£===W°MemberExpressionÍ
+jÍ
+xNªIdentifierÍ
+jÍ
+s©DirectionNªIdentifierÍ
+tÍ
+x¤DOWNÂÂP®BlockStatementÍ
+zÍ§”S³ExpressionStatementÍ
+‰Í
+¢T®CallExpressionÍ
+‰Í
+¡W°MemberExpressionÍ
+‰Í
+•NªIdentifierÍ
+‰Í
+Œ£ctxNªIdentifierÍ
+Í
+•¨fillRectÂÂ”NªIdentifierÍ
+–Í
+—¡xNªIdentifierÍ
+™Í
+š¡yX§LiteralÍ
+œÍ
+¡8NªIdentifierÍ
+ŸÍ
+ ¡hÂS³ExpressionStatementÍ
+°Í
+ÑT®CallExpressionÍ
+°Í
+ĞW°MemberExpressionÍ
+°Í
+¼NªIdentifierÍ
+°Í
+³£ctxNªIdentifierÍ
+´Í
+¼¨fillRectÂÂ”Z°BinaryExpressionÍ
+½Í
+ÆZ°BinaryExpressionÍ
+½Í
+ÂNªIdentifierÍ
+½Í
+¾¡x¡+NªIdentifierÍ
+ÁÍ
+Â¡w¡-X§LiteralÍ
+ÅÍ
+Æ¡8NªIdentifierÍ
+ÈÍ
+É¡yX§LiteralÍ
+ËÍ
+Ì¡8NªIdentifierÍ
+ÎÍ
+Ï¡hÂS³ExpressionStatementÍ
+ßÍ
+ùV´AssignmentExpressionÍ
+ßÍ
+ø¡=W°MemberExpressionÍ
+ßÍ
+ìNªIdentifierÍ
+ßÍ
+â£ctxNªIdentifierÍ
+ãÍ
+ì©fillStyleÂÂX§LiteralÍ
+ïÍ
+ø§#000000©'#000000'Ôra—¤type¥start£end¤init¤test¦update¤body¬ForStatementÍÍœL³VariableDeclarationÍÍ‘M²VariableDeclaratorÍÍNªIdentifierÍÍ¡iX§LiteralÍÍ¡2£letZ°BinaryExpressionÍÍNªIdentifierÍÍ¡i¡<NªIdentifierÍÍ¡hV´AssignmentExpressionÍÍ$¢+=NªIdentifierÍÍ¡iX§LiteralÍ#Í$¡6P®BlockStatementÍ&Íœ’S³ExpressionStatementÍ9ÍVT®CallExpressionÍ9ÍUW°MemberExpressionÍ9ÍENªIdentifierÍ9Í<£ctxNªIdentifierÍ=ÍE¨fillRectÂÂ”NªIdentifierÍFÍG¡xZ°BinaryExpressionÍIÍNNªIdentifierÍIÍJ¡y¡+NªIdentifierÍMÍN¡iX§LiteralÍPÍQ¡8X§LiteralÍSÍT¡2ÂS³ExpressionStatementÍhÍT®CallExpressionÍhÍŒW°MemberExpressionÍhÍtNªIdentifierÍhÍk£ctxNªIdentifierÍlÍt¨fillRectÂÂ”Z°BinaryExpressionÍuÍ~Z°BinaryExpressionÍuÍzNªIdentifierÍuÍv¡x¡+NªIdentifierÍyÍz¡w¡-X§LiteralÍ}Í~¡8Z°BinaryExpressionÍ€Í…NªIdentifierÍ€Í¡y¡+NªIdentifierÍ„Í…¡iX§LiteralÍ‡Íˆ¡8X§LiteralÍŠÍ‹¡2ÂP®BlockStatementÍ¶Íã”S³ExpressionStatementÍÅÍŞT®CallExpressionÍÅÍİW°MemberExpressionÍÅÍÑNªIdentifierÍÅÍÈ£ctxNªIdentifierÍÉÍÑ¨fillRectÂÂ”NªIdentifierÍÒÍÓ¡xNªIdentifierÍÕÍÖ¡yNªIdentifierÍØÍÙ¡wX§LiteralÍÛÍÜ¡8ÂS³ExpressionStatementÍìÍT®CallExpressionÍìÍW°MemberExpressionÍìÍøNªIdentifierÍìÍï£ctxNªIdentifierÍğÍø¨fillRectÂÂ”NªIdentifierÍùÍú¡xZ°BinaryExpressionÍüÍZ°BinaryExpressionÍüÍNªIdentifierÍüÍı¡y¡+NªIdentifierÍ Í¡h¡-X§LiteralÍÍ¡8NªIdentifierÍÍ¡wX§LiteralÍ
+Í¡8ÂS³ExpressionStatementÍÍ5V´AssignmentExpressionÍÍ4¡=W°MemberExpressionÍÍ(NªIdentifierÍÍ£ctxNªIdentifierÍÍ(©fillStyleÂÂX§LiteralÍ+Í4§#000000©'#000000'a¬ForStatementÍCÍØL³VariableDeclarationÍHÍQ‘M²VariableDeclaratorÍLÍQNªIdentifierÍLÍM¡iX§LiteralÍPÍQ¡2£letZ°BinaryExpressionÍSÍXNªIdentifierÍSÍT¡i¡<NªIdentifierÍWÍX¡wV´AssignmentExpressionÍZÍ`¢+=NªIdentifierÍZÍ[¡iX§LiteralÍ_Í`¡6P®BlockStatementÍbÍØ’S³ExpressionStatementÍuÍ’T®CallExpressionÍuÍ‘W°MemberExpressionÍuÍNªIdentifierÍuÍx£ctxNªIdentifierÍyÍ¨fillRectÂÂ”Z°BinaryExpressionÍ‚Í‡NªIdentifierÍ‚Íƒ¡x¡+NªIdentifierÍ†Í‡¡iNªIdentifierÍ‰ÍŠ¡yX§LiteralÍŒÍ¡2X§LiteralÍÍ¡8ÂS³ExpressionStatementÍ¤ÍÉT®CallExpressionÍ¤ÍÈW°MemberExpressionÍ¤Í°NªIdentifierÍ¤Í§£ctxNªIdentifierÍ¨Í°¨fillRectÂÂ”Z°BinaryExpressionÍ±Í¶NªIdentifierÍ±Í²¡x¡+NªIdentifierÍµÍ¶¡iZ°BinaryExpressionÍ¸ÍÁZ°BinaryExpressionÍ¸Í½NªIdentifierÍ¸Í¹¡y¡+NªIdentifierÍ¼Í½¡h¡-X§LiteralÍÀÍÁ¡8X§LiteralÍÃÍÄ¡2X§LiteralÍÆÍÇ¡8ÂS³ExpressionStatementÍşÍV´AssignmentExpressionÍşÍ¡=W°MemberExpressionÍşÍNªIdentifierÍşÍ£ctxNªIdentifierÍÍ©fillStyleÂÂNªIdentifierÍÍ©bodyColorY«IfStatementÍ"ÍíZ±LogicalExpressionÍ&ÍTZ°BinaryExpressionÍ&Í:NªIdentifierÍ&Í)£dir£===W°MemberExpressionÍ.Í:NªIdentifierÍ.Í7©DirectionNªIdentifierÍ8Í:¢UPÂÂ¢||Z°BinaryExpressionÍ>ÍTNªIdentifierÍ>ÍA£dir£===W°MemberExpressionÍFÍTNªIdentifierÍFÍO©DirectionNªIdentifierÍPÍT¤DOWNÂÂP®BlockStatementÍVÍš‘S³ExpressionStatementÍeÍT®CallExpressionÍeÍW°MemberExpressionÍeÍqNªIdentifierÍeÍh£ctxNªIdentifierÍiÍq¨fillRectÂÂ”Z°BinaryExpressionÍrÍwNªIdentifierÍrÍs¡x¡+X§LiteralÍvÍw¡8Z°BinaryExpressionÍyÍ~NªIdentifierÍyÍz¡y¡+X§LiteralÍ}Í~¡4Z°BinaryExpressionÍ€Í†NªIdentifierÍ€Í¡w¡-X§LiteralÍ„Í†¢16Z°BinaryExpressionÍˆÍNªIdentifierÍˆÍ‰¡h¡-X§LiteralÍŒÍ¡8ÂP®BlockStatementÍ©Íí‘S³ExpressionStatementÍ¸ÍâT®CallExpressionÍ¸ÍáW°MemberExpressionÍ¸ÍÄNªIdentifierÍ¸Í»£ctxNªIdentifierÍ¼ÍÄ¨fillRectÂÂ”Z°BinaryExpressionÍÅÍÊNªIdentifierÍÅÍÆ¡x¡+X§LiteralÍÉÍÊ¡4Z°BinaryExpressionÍÌÍÑNªIdentifierÍÌÍÍ¡y¡+X§LiteralÍĞÍÑ¡8Z°BinaryExpressionÍÓÍØNªIdentifierÍÓÍÔ¡w¡-X§LiteralÍ×ÍØ¡8Z°BinaryExpressionÍÚÍàNªIdentifierÍÚÍÛ¡h¡-X§LiteralÍŞÍà¢16ÂS³ExpressionStatementÍÍ8V´AssignmentExpressionÍÍ7¡=W°MemberExpressionÍÍNªIdentifierÍÍ£ctxNªIdentifierÍÍ©fillStyleÂÂT®CallExpressionÍÍ7W°MemberExpressionÍÍ5U®ThisExpressionÍÍ#NªIdentifierÍ$Í5±getHighlightColorÂÂÂS³ExpressionStatementÍBÍRT®CallExpressionÍBÍQW°MemberExpressionÍBÍONªIdentifierÍBÍE£ctxNªIdentifierÍFÍO©beginPathÂÂÂS³ExpressionStatementÍ\ÍT®CallExpressionÍ\ÍŒW°MemberExpressionÍ\ÍcNªIdentifierÍ\Í_£ctxNªIdentifierÍ`Íc£arcÂÂ•Z°BinaryExpressionÍdÍmNªIdentifierÍdÍe¡x¡+Z°BinaryExpressionÍhÍmNªIdentifierÍhÍi¡w¡/X§LiteralÍlÍm¡2Z°BinaryExpressionÍoÍxNªIdentifierÍoÍp¡y¡+Z°BinaryExpressionÍsÍxNªIdentifierÍsÍt¡h¡/X§LiteralÍwÍx¡2X§LiteralÍzÍ{¡8X§LiteralÍ}Í~ ¡0Z°BinaryExpressionÍ€Í‹W°MemberExpressionÍ€Í‡NªIdentifierÍ€Í„¤MathNªIdentifierÍ…Í‡¢PIÂÂ¡*X§LiteralÍŠÍ‹¡2ÂS³ExpressionStatementÍ—Í¢T®CallExpressionÍ—Í¡W°MemberExpressionÍ—ÍŸNªIdentifierÍ—Íš£ctxNªIdentifierÍ›ÍŸ¤fillÂÂÂS³ExpressionStatementÍ¬ÍÆV´AssignmentExpressionÍ¬ÍÅ¡=W°MemberExpressionÍ¬Í¹NªIdentifierÍ¬Í¯£ctxNªIdentifierÍ°Í¹©fillStyleÂÂNªIdentifierÍ¼ÍÅ©bodyColorS³ExpressionStatementÍĞÍàT®CallExpressionÍĞÍßW°MemberExpressionÍĞÍİNªIdentifierÍĞÍÓ£ctxNªIdentifierÍÔÍİ©beginPathÂÂÂS³ExpressionStatementÍêÍT®CallExpressionÍêÍW°MemberExpressionÍêÍñNªIdentifierÍêÍí£ctxNªIdentifierÍîÍñ£arcÂÂ•Z°BinaryExpressionÍòÍûNªIdentifierÍòÍó¡x¡+Z°BinaryExpressionÍöÍûNªIdentifierÍöÍ÷¡w¡/X§LiteralÍúÍû¡2Z°BinaryExpressionÍıÍNªIdentifierÍıÍş¡y¡+Z°BinaryExpressionÍÍNªIdentifierÍÍ¡h¡/X§LiteralÍÍ¡2X§LiteralÍÍ	¡4X§LiteralÍÍ ¡0Z°BinaryExpressionÍÍW°MemberExpressionÍÍNªIdentifierÍÍ¤MathNªIdentifierÍÍ¢PIÂÂ¡*X§LiteralÍÍ¡2ÂS³ExpressionStatementÍ%Í0T®CallExpressionÍ%Í/W°MemberExpressionÍ%Í-NªIdentifierÍ%Í(£ctxNªIdentifierÍ)Í-¤fillÂÂÂS³ExpressionStatementÍQÍkV´AssignmentExpressionÍQÍj¡=W°MemberExpressionÍQÍ^NªIdentifierÍQÍT£ctxNªIdentifierÍUÍ^©fillStyleÂÂNªIdentifierÍaÍj©COLOR_GUNL³VariableDeclarationÍuÍš’M²VariableDeclaratorÍ{Í‰NªIdentifierÍ{Í}¢cxZ°BinaryExpressionÍ€Í‰NªIdentifierÍ€Í¡x¡+Z°BinaryExpressionÍ„Í‰NªIdentifierÍ„Í…¡w¡/X§LiteralÍˆÍ‰¡2M²VariableDeclaratorÍ‹Í™NªIdentifierÍ‹Í¢cyZ°BinaryExpressionÍÍ™NªIdentifierÍÍ‘¡y¡+Z°BinaryExpressionÍ”Í™NªIdentifierÍ”Í•¡h¡/X§LiteralÍ˜Í™¡2¥const]¯SwitchStatementÍ¤ÍNªIdentifierÍ¬Í¯£dir”^ªSwitchCaseÍÀÍƒ”S³ExpressionStatementÍäÍT®CallExpressionÍäÍW°MemberExpressionÍäÍğNªIdentifierÍäÍç£ctxNªIdentifierÍèÍğ¨fillRectÂÂ”Z°BinaryExpressionÍñÍ÷NªIdentifierÍñÍó¢cx¡-X§LiteralÍöÍ÷¡3Z°BinaryExpressionÍùÍşNªIdentifierÍùÍú¡y¡-X§LiteralÍıÍş¡4X§LiteralÍ Í¡6Z°BinaryExpressionÍÍZ°BinaryExpressionÍÍNªIdentifierÍÍ¡h¡/X§LiteralÍÍ¡2¡+X§LiteralÍÍ¡4ÂS³ExpressionStatementÍ Í7V´AssignmentExpressionÍ Í6¡=W°MemberExpressionÍ Í-NªIdentifierÍ Í#£ctxNªIdentifierÍ$Í-©fillStyleÂÂX§LiteralÍ0Í6¤#000¦'#000'S³ExpressionStatementÍIÍkT®CallExpressionÍIÍjW°MemberExpressionÍIÍUNªIdentifierÍIÍL£ctxNªIdentifierÍMÍU¨fillRectÂÂ”Z°BinaryExpressionÍVÍ\NªIdentifierÍVÍX¢cx¡-X§LiteralÍ[Í\¡4Z°BinaryExpressionÍ^ÍcNªIdentifierÍ^Í_¡y¡-X§LiteralÍbÍc¡4X§LiteralÍeÍf¡8X§LiteralÍhÍi¡4Â_®BreakStatementÍ}ÍƒÀW°MemberExpressionÍÅÍÑNªIdentifierÍÅÍÎ©DirectionNªIdentifierÍÏÍÑ¢UPÂÂ^ªSwitchCaseÍ‘ÍS”S³ExpressionStatementÍ·ÍŞT®CallExpressionÍ·ÍİW°MemberExpressionÍ·ÍÃNªIdentifierÍ·Íº£ctxNªIdentifierÍ»ÍÃ¨fillRectÂÂ”Z°BinaryExpressionÍÄÍÊNªIdentifierÍÄÍÆ¢cx¡-X§LiteralÍÉÍÊ¡3NªIdentifierÍÌÍÎ¢cyX§LiteralÍĞÍÑ¡6Z°BinaryExpressionÍÓÍÜZ°BinaryExpressionÍÓÍØNªIdentifierÍÓÍÔ¡h¡/X§LiteralÍ×ÍØ¡2¡+X§LiteralÍÛÍÜ¡4ÂS³ExpressionStatementÍğÍV´AssignmentExpressionÍğÍ¡=W°MemberExpressionÍğÍıNªIdentifierÍğÍó£ctxNªIdentifierÍôÍı©fillStyleÂÂX§LiteralÍ Í¤#000¦'#000'S³ExpressionStatementÍÍ;T®CallExpressionÍÍ:W°MemberExpressionÍÍ%NªIdentifierÍÍ£ctxNªIdentifierÍÍ%¨fillRectÂÂ”Z°BinaryExpressionÍ&Í,NªIdentifierÍ&Í(¢cx¡-X§LiteralÍ+Í,¡4Z°BinaryExpressionÍ.Í3NªIdentifierÍ.Í/¡y¡+NªIdentifierÍ2Í3¡hX§LiteralÍ5Í6¡8X§LiteralÍ8Í9¡4Â_®BreakStatementÍMÍSÀW°MemberExpressionÍ–Í¤NªIdentifierÍ–ÍŸ©DirectionNªIdentifierÍ Í¤¤DOWNÂÂ^ªSwitchCaseÍaÍ&”S³ExpressionStatementÍ‡Í±T®CallExpressionÍ‡Í°W°MemberExpressionÍ‡Í“NªIdentifierÍ‡ÍŠ£ctxNªIdentifierÍ‹Í“¨fillRectÂÂ”Z°BinaryExpressionÍ”Í™NªIdentifierÍ”Í•¡x¡-X§LiteralÍ˜Í™¡4Z°BinaryExpressionÍ›Í¡NªIdentifierÍ›Í¢cy¡-X§LiteralÍ Í¡¡3Z°BinaryExpressionÍ£Í¬Z°BinaryExpressionÍ£Í¨NªIdentifierÍ£Í¤¡w¡/X§LiteralÍ§Í¨¡2¡+X§LiteralÍ«Í¬¡4X§LiteralÍ®Í¯¡6ÂS³ExpressionStatementÍÃÍÚV´AssignmentExpressionÍÃÍÙ¡=W°MemberExpressionÍÃÍĞNªIdentifierÍÃÍÆ£ctxNªIdentifierÍÇÍĞ©fillStyleÂÂX§LiteralÍÓÍÙ¤#000¦'#000'S³ExpressionStatementÍìÍT®CallExpressionÍìÍW°MemberExpressionÍìÍøNªIdentifierÍìÍï£ctxNªIdentifierÍğÍø¨fillRectÂÂ”Z°BinaryExpressionÍùÍşNªIdentifierÍùÍú¡x¡-X§LiteralÍıÍş¡4Z°BinaryExpressionÍ ÍNªIdentifierÍ Í¢cy¡-X§LiteralÍÍ¡4X§LiteralÍÍ	¡4X§LiteralÍÍ¡8Â_®BreakStatementÍ Í&ÀW°MemberExpressionÍfÍtNªIdentifierÍfÍo©DirectionNªIdentifierÍpÍt¤LEFTÂÂ^ªSwitchCaseÍ4Í÷”S³ExpressionStatementÍ[Í‚T®CallExpressionÍ[ÍW°MemberExpressionÍ[ÍgNªIdentifierÍ[Í^£ctxNªIdentifierÍ_Íg¨fillRectÂÂ”NªIdentifierÍhÍj¢cxZ°BinaryExpressionÍlÍrNªIdentifierÍlÍn¢cy¡-X§LiteralÍqÍr¡3Z°BinaryExpressionÍtÍ}Z°BinaryExpressionÍtÍyNªIdentifierÍtÍu¡w¡/X§LiteralÍxÍy¡2¡+X§LiteralÍ|Í}¡4X§LiteralÍÍ€¡6ÂS³ExpressionStatementÍ”Í«V´AssignmentExpressionÍ”Íª¡=W°MemberExpressionÍ”Í¡NªIdentifierÍ”Í—£ctxNªIdentifierÍ˜Í¡©fillStyleÂÂX§LiteralÍ¤Íª¤#000¦'#000'S³ExpressionStatementÍ½ÍßT®CallExpressionÍ½ÍŞW°MemberExpressionÍ½ÍÉNªIdentifierÍ½ÍÀ£ctxNªIdentifierÍÁÍÉ¨fillRectÂÂ”Z°BinaryExpressionÍÊÍÏNªIdentifierÍÊÍË¡x¡+NªIdentifierÍÎÍÏ¡wZ°BinaryExpressionÍÑÍ×NªIdentifierÍÑÍÓ¢cy¡-X§LiteralÍÖÍ×¡4X§LiteralÍÙÍÚ¡4X§LiteralÍÜÍİ¡8Â_®BreakStatementÍñÍ÷ÀW°MemberExpressionÍ9ÍHNªIdentifierÍ9ÍB©DirectionNªIdentifierÍCÍH¥RIGHTÂÂÀK¶ExportNamedDeclarationÍÍZO°ClassDeclarationÍ$ÍZNªIdentifierÍ*Í4ªPlayerTankNªIdentifierÍ=ÍA¤TankP©ClassBodyÍBÍZ˜Q°MethodDefinitionÍIÍ—ÂÂNªIdentifierÍIÍT«constructor«constructorR²FunctionExpressionÍTÍ—ÀÂÂÂ’Ôrb•¤type¥start£end¤left¥right±AssignmentPatternÍUÍgNªIdentifierÍUÍV¡xNªIdentifierÍYÍg®PLAYER_START_Xb±AssignmentPatternÍiÍ{NªIdentifierÍiÍj¡yNªIdentifierÍmÍ{®PLAYER_START_YP®BlockStatementÍ}Í——S³ExpressionStatementÍˆÍ¼T®CallExpressionÍˆÍ»U¥SuperÍˆÍ•NªIdentifierÍÍ¡xNªIdentifierÍ‘Í’¡yNªIdentifierÍ”Í ¬PLAYER_SPEEDX§LiteralÍ¢Í£¡1NªIdentifierÍ¥ÍºµPLAYER_SHOOT_COOLDOWNÂS³ExpressionStatementÍÆÍßV´AssignmentExpressionÍÆÍŞ¡=W°MemberExpressionÍÆÍÚU®ThisExpressionÍÆÍÊNªIdentifierÍËÍÚ¯invincibleTimerÂÂX§LiteralÍİÍŞ ¡0S³ExpressionStatementÍéÍV´AssignmentExpressionÍéÍ¡=W°MemberExpressionÍéÍúU®ThisExpressionÍéÍíNªIdentifierÍîÍú¬speedBoostedÂÂX§LiteralÍıÍÂ¥falseS³ExpressionStatementÍÍ'V´AssignmentExpressionÍÍ&¡=W°MemberExpressionÍÍU®ThisExpressionÍÍNªIdentifierÍÍ¬shieldActiveÂÂX§LiteralÍ!Í&Â¥falseS³ExpressionStatementÍ1ÍJV´AssignmentExpressionÍ1ÍI¡=W°MemberExpressionÍ1ÍAU®ThisExpressionÍ1Í5NªIdentifierÍ6ÍA«powerActiveÂÂX§LiteralÍDÍIÂ¥falseS³ExpressionStatementÍTÍhV´AssignmentExpressionÍTÍg¡=W°MemberExpressionÍTÍ_U®ThisExpressionÍTÍXNªIdentifierÍYÍ_¦frozenÂÂX§LiteralÍbÍgÂ¥falseS³ExpressionStatementÍrÍV´AssignmentExpressionÍrÍ¡=W°MemberExpressionÍrÍ€U®ThisExpressionÍrÍvNªIdentifierÍwÍ€©directionÂÂW°MemberExpressionÍƒÍNªIdentifierÍƒÍŒ©DirectionNªIdentifierÍÍ¢UPÂÂQ°MethodDefinitionÍÍÆÂÂNªIdentifierÍÍ¥¨getOwner¦methodR²FunctionExpressionÍ¥ÍÆÀÂÂÂP®BlockStatementÍ¨ÍÆ‘\¯ReturnStatementÍªÍÄW°MemberExpressionÍ±ÍÃNªIdentifierÍ±Í¼«BulletOwnerNªIdentifierÍ½ÍÃ¦PLAYERÂÂQ°MethodDefinitionÍÌÍFÂÂNªIdentifierÍÌÍÒ¦update¦methodR²FunctionExpressionÍÒÍFÀÂÂÂ‘NªIdentifierÍÓÍÕ¢dtP®BlockStatementÍ×ÍF’S³ExpressionStatementÍâÍóT®CallExpressionÍâÍòW°MemberExpressionÍâÍîU¥SuperÍâÍçNªIdentifierÍèÍî¦updateÂÂ‘NªIdentifierÍïÍñ¢dtÂY«IfStatementÍıÍ?Z°BinaryExpressionÍÍW°MemberExpressionÍÍU®ThisExpressionÍÍNªIdentifierÍÍ¯invincibleTimerÂÂ¡>X§LiteralÍÍ ¡0S³ExpressionStatementÍ(Í?[°UpdateExpressionÍ(Í>¢--ÂW°MemberExpressionÍ(Í<U®ThisExpressionÍ(Í,NªIdentifierÍ-Í<¯invincibleTimerÂÂÀQ°MethodDefinitionÍLÍ˜ÂÂNªIdentifierÍPÍ\¬isInvincible£getR²FunctionExpressionÍ\Í˜ÀÂÂÂP®BlockStatementÍ_Í˜‘\¯ReturnStatementÍaÍ–Z±LogicalExpressionÍhÍ•Z°BinaryExpressionÍhÍ€W°MemberExpressionÍhÍ|U®ThisExpressionÍhÍlNªIdentifierÍmÍ|¯invincibleTimerÂÂ¡>X§LiteralÍÍ€ ¡0¢||W°MemberExpressionÍ„Í•U®ThisExpressionÍ„ÍˆNªIdentifierÍ‰Í•¬shieldActiveÂÂQ°MethodDefinitionÍÍåÂÂNªIdentifierÍÍ¬®makeInvincible¦methodR²FunctionExpressionÍ¬ÍåÀÂÂÂP®BlockStatementÍ¯Íå‘S³ExpressionStatementÍ±ÍãV´AssignmentExpressionÍ±Íâ¡=W°MemberExpressionÍ±ÍÅU®ThisExpressionÍ±ÍµNªIdentifierÍ¶ÍÅ¯invincibleTimerÂÂNªIdentifierÍÈÍâºPLAYER_INVINCIBLE_DURATIONQ°MethodDefinitionÍëÍÂÂNªIdentifierÍëÍ÷¬getBodyColor¦methodR²FunctionExpressionÍ÷ÍÀÂÂÂP®BlockStatementÍúÍ‘\¯ReturnStatementÍüÍNªIdentifierÍÍ±COLOR_PLAYER_BODYQ°MethodDefinitionÍÍSÂÂNªIdentifierÍÍ.±getHighlightColor¦methodR²FunctionExpressionÍ.ÍSÀÂÂÂP®BlockStatementÍ1ÍS‘\¯ReturnStatementÍ3ÍQNªIdentifierÍ:ÍP¶COLOR_PLAYER_HIGHLIGHTQ°MethodDefinitionÍYÍWÂÂNªIdentifierÍYÍ_¦render¦methodR²FunctionExpressionÍ_ÍWÀÂÂÂ‘NªIdentifierÍ`Íc£ctxP®BlockStatementÍeÍW“Y«IfStatementÍ—ÍôZ±LogicalExpressionÍ›ÍŞW°MemberExpressionÍ›Í¬U®ThisExpressionÍ›ÍŸNªIdentifierÍ Í¬¬isInvincibleÂÂ¢&&Z°BinaryExpressionÍ°ÍŞZ°BinaryExpressionÍ°ÍØT®CallExpressionÍ°ÍÔW°MemberExpressionÍ°ÍºNªIdentifierÍ°Í´¤MathNªIdentifierÍµÍº¥floorÂÂ‘Z°BinaryExpressionÍ»ÍÓW°MemberExpressionÍ»ÍÏU®ThisExpressionÍ»Í¿NªIdentifierÍÀÍÏ¯invincibleTimerÂÂ¡/X§LiteralÍÒÍÓ¡4Â¡%X§LiteralÍ×ÍØ¡2£===X§LiteralÍİÍŞ ¡0\¯ReturnStatementÍíÍôÀÀS³ExpressionStatementÍşÍT®CallExpressionÍşÍW°MemberExpressionÍşÍ
+U¥SuperÍşÍNªIdentifierÍÍ
+¦renderÂÂ‘NªIdentifierÍÍ£ctxÂY«IfStatementÍ4ÍPW°MemberExpressionÍ8ÍIU®ThisExpressionÍ8Í<NªIdentifierÍ=ÍI¬shieldActiveÂÂP®BlockStatementÍKÍP–S³ExpressionStatementÍZÍvV´AssignmentExpressionÍZÍu¡=W°MemberExpressionÍZÍiNªIdentifierÍZÍ]£ctxNªIdentifierÍ^Íi«strokeStyleÂÂX§LiteralÍlÍu§#4488FF©'#4488FF'S³ExpressionStatementÍ„Í–V´AssignmentExpressionÍ„Í•¡=W°MemberExpressionÍ„Í‘NªIdentifierÍ„Í‡£ctxNªIdentifierÍˆÍ‘©lineWidthÂÂX§LiteralÍ”Í•¡3S³ExpressionStatementÍ¤Í´T®CallExpressionÍ¤Í³W°MemberExpressionÍ¤Í±NªIdentifierÍ¤Í§£ctxNªIdentifierÍ¨Í±©beginPathÂÂÂS³ExpressionStatementÍÂÍ
+T®CallExpressionÍÂÍ	W°MemberExpressionÍÂÍÉNªIdentifierÍÂÍÅ£ctxNªIdentifierÍÆÍÉ£arcÂÂ•W°MemberExpressionÍÊÍÖU®ThisExpressionÍÊÍÎNªIdentifierÍÏÍÖ§centerXÂÂW°MemberExpressionÍØÍäU®ThisExpressionÍØÍÜNªIdentifierÍİÍä§centerYÂÂZ°BinaryExpressionÍæÍøZ°BinaryExpressionÍæÍôW°MemberExpressionÍæÍğU®ThisExpressionÍæÍêNªIdentifierÍëÍğ¥widthÂÂ¡/X§LiteralÍóÍô¡2¡+X§LiteralÍ÷Íø¡6X§LiteralÍúÍû ¡0Z°BinaryExpressionÍıÍW°MemberExpressionÍıÍNªIdentifierÍıÍ¤MathNªIdentifierÍÍ¢PIÂÂ¡*X§LiteralÍÍ¡2ÂS³ExpressionStatementÍÍ%T®CallExpressionÍÍ$W°MemberExpressionÍÍ"NªIdentifierÍÍ£ctxNªIdentifierÍÍ"¦strokeÂÂÂS³ExpressionStatementÍ3ÍEV´AssignmentExpressionÍ3ÍD¡=W°MemberExpressionÍ3Í@NªIdentifierÍ3Í6£ctxNªIdentifierÍ7Í@©lineWidthÂÂX§LiteralÍCÍD¡1ÀÀK¶ExportNamedDeclarationÍjÍîO°ClassDeclarationÍqÍîNªIdentifierÍwÍ€©EnemyTankNªIdentifierÍ‰Í¤TankP©ClassBodyÍÍî•Q°MethodDefinitionÍ•ÍÂÂNªIdentifierÍ•Í «constructor«constructorR²FunctionExpressionÍ ÍÀÂÂÂ“NªIdentifierÍ¡Í¢¡xNªIdentifierÍ¤Í¥¡yb±AssignmentPatternÍ§Í½NªIdentifierÍ§Í«¤typeW°MemberExpressionÍ®Í½NªIdentifierÍ®Í·©EnemyTypeNªIdentifierÍ¸Í½¥BASICÂÂP®BlockStatementÍ¿Í˜L³VariableDeclarationÍÊÍã“M²VariableDeclaratorÍÎÍÑNªIdentifierÍÎÍÑ£spdÀM²VariableDeclaratorÍÓÍŞNªIdentifierÍÓÍŞ«cooldownMaxÀM²VariableDeclaratorÍàÍâNªIdentifierÍàÍâ¢hpÀ£let]¯SwitchStatementÍíÍNªIdentifierÍõÍù¤type“^ªSwitchCaseÍ
+Í¬”S³ExpressionStatementÍ0ÍGV´AssignmentExpressionÍ0ÍF¡=NªIdentifierÍ0Í3£spdNªIdentifierÍ6ÍF°ENEMY_FAST_SPEEDS³ExpressionStatementÍYÍ{V´AssignmentExpressionÍYÍz¡=NªIdentifierÍYÍd«cooldownMaxNªIdentifierÍgÍz³ENEMY_FAST_COOLDOWNS³ExpressionStatementÍÍ”V´AssignmentExpressionÍÍ“¡=NªIdentifierÍÍ¢hpX§LiteralÍ’Í“¡1_®BreakStatementÍ¦Í¬ÀW°MemberExpressionÍÍNªIdentifierÍÍ©EnemyTypeNªIdentifierÍÍ¤FASTÂÂ^ªSwitchCaseÍºÍ_”S³ExpressionStatementÍáÍùV´AssignmentExpressionÍáÍø¡=NªIdentifierÍáÍä£spdNªIdentifierÍçÍø±ENEMY_HEAVY_SPEEDS³ExpressionStatementÍÍ.V´AssignmentExpressionÍÍ-¡=NªIdentifierÍÍ«cooldownMaxNªIdentifierÍÍ-´ENEMY_HEAVY_COOLDOWNS³ExpressionStatementÍ@ÍGV´AssignmentExpressionÍ@ÍF¡=NªIdentifierÍ@ÍB¢hpX§LiteralÍEÍF¡3_®BreakStatementÍYÍ_ÀW°MemberExpressionÍ¿ÍÎNªIdentifierÍ¿ÍÈ©EnemyTypeNªIdentifierÍÉÍÎ¥HEAVYÂÂ^ªSwitchCaseÍmÍ”S³ExpressionStatementÍ‡ÍŸV´AssignmentExpressionÍ‡Í¡=NªIdentifierÍ‡ÍŠ£spdNªIdentifierÍÍ±ENEMY_BASIC_SPEEDS³ExpressionStatementÍ±ÍÔV´AssignmentExpressionÍ±ÍÓ¡=NªIdentifierÍ±Í¼«cooldownMaxNªIdentifierÍ¿ÍÓ´ENEMY_BASIC_COOLDOWNS³ExpressionStatementÍæÍíV´AssignmentExpressionÍæÍì¡=NªIdentifierÍæÍè¢hpX§LiteralÍëÍì¡1_®BreakStatementÍÿÍÀÀS³ExpressionStatementÍÍ<T®CallExpressionÍÍ;U¥SuperÍÍ•NªIdentifierÍ Í!¡xNªIdentifierÍ#Í$¡yNªIdentifierÍ&Í)£spdNªIdentifierÍ+Í-¢hpNªIdentifierÍ/Í:«cooldownMaxÂS³ExpressionStatementÍFÍZV´AssignmentExpressionÍFÍY¡=W°MemberExpressionÍFÍQU®ThisExpressionÍFÍJNªIdentifierÍKÍQ¦frozenÂÂX§LiteralÍTÍYÂ¥falseS³ExpressionStatementÍdÍwV´AssignmentExpressionÍdÍv¡=W°MemberExpressionÍdÍrU®ThisExpressionÍdÍhNªIdentifierÍiÍr©moveTimerÂÂX§LiteralÍuÍv ¡0S³ExpressionStatementÍÍ—V´AssignmentExpressionÍÍ–¡=W°MemberExpressionÍÍU®ThisExpressionÍÍ…NªIdentifierÍ†Í©enemyTypeÂÂNªIdentifierÍ’Í–¤typeS³ExpressionStatementÍ¡ÍÁV´AssignmentExpressionÍ¡ÍÀ¡=W°MemberExpressionÍ¡Í¯U®ThisExpressionÍ¡Í¥NªIdentifierÍ¦Í¯©directionÂÂW°MemberExpressionÍ²ÍÀNªIdentifierÍ²Í»©DirectionNªIdentifierÍ¼ÍÀ¤DOWNÂÂS³ExpressionStatementÍËÍV´AssignmentExpressionÍËÍ¡=W°MemberExpressionÍËÍİU®ThisExpressionÍËÍÏNªIdentifierÍĞÍİ­shootCooldownÂÂZ°BinaryExpressionÍàÍNªIdentifierÍàÍë«cooldownMax¡+T®CallExpressionÍîÍW°MemberExpressionÍîÍøNªIdentifierÍîÍò¤MathNªIdentifierÍóÍø¥floorÂÂ‘Z°BinaryExpressionÍùÍT®CallExpressionÍùÍW°MemberExpressionÍùÍNªIdentifierÍùÍı¤MathNªIdentifierÍşÍ¦randomÂÂÂ¡*NªIdentifierÍ	Í«cooldownMaxÂQ°MethodDefinitionÍ#ÍKÂÂNªIdentifierÍ#Í+¨getOwner¦methodR²FunctionExpressionÍ+ÍKÀÂÂÂP®BlockStatementÍ.ÍK‘\¯ReturnStatementÍ0ÍIW°MemberExpressionÍ7ÍHNªIdentifierÍ7ÍB«BulletOwnerNªIdentifierÍCÍH¥ENEMYÂÂQ°MethodDefinitionÍQÍ>ÂÂNªIdentifierÍQÍ]¬getBodyColor¦methodR²FunctionExpressionÍ]Í>ÀÂÂÂP®BlockStatementÍ`Í>‘]¯SwitchStatementÍkÍ7W°MemberExpressionÍsÍU®ThisExpressionÍsÍwNªIdentifierÍxÍ©enemyTypeÂÂ“^ªSwitchCaseÍ’Í¿‘\¯ReturnStatementÍ§Í¿NªIdentifierÍ®Í¾°COLOR_ENEMY_FASTW°MemberExpressionÍ—Í¥NªIdentifierÍ—Í ©EnemyTypeNªIdentifierÍ¡Í¥¤FASTÂÂ^ªSwitchCaseÍÍÍü‘\¯ReturnStatementÍãÍüNªIdentifierÍêÍû±COLOR_ENEMY_HEAVYW°MemberExpressionÍÒÍáNªIdentifierÍÒÍÛ©EnemyTypeNªIdentifierÍÜÍá¥HEAVYÂÂ^ªSwitchCaseÍ
+Í,‘\¯ReturnStatementÍÍ,NªIdentifierÍÍ+±COLOR_ENEMY_BASICÀQ°MethodDefinitionÍDÍÂÂNªIdentifierÍDÍU±getHighlightColor¦methodR²FunctionExpressionÍUÍÀÂÂÂP®BlockStatementÍXÍ‘]¯SwitchStatementÍcÍW°MemberExpressionÍkÍyU®ThisExpressionÍkÍoNªIdentifierÍpÍy©enemyTypeÂÂ“^ªSwitchCaseÍŠÍ°‘\¯ReturnStatementÍŸÍ°X§LiteralÍ¦Í¯§#AAEEFF©'#AAEEFF'W°MemberExpressionÍÍNªIdentifierÍÍ˜©EnemyTypeNªIdentifierÍ™Í¤FASTÂÂ^ªSwitchCaseÍ¾Íå‘\¯ReturnStatementÍÔÍåX§LiteralÍÛÍä§#999999©'#999999'W°MemberExpressionÍÃÍÒNªIdentifierÍÃÍÌ©EnemyTypeNªIdentifierÍÍÍÒ¥HEAVYÂÂ^ªSwitchCaseÍóÍ‘\¯ReturnStatementÍüÍX§LiteralÍÍ§#EEEEEE©'#EEEEEE'ÀQ°MethodDefinitionÍ%ÍëÂÂNªIdentifierÍ)Í3ªscoreValue£getR²FunctionExpressionÍ3ÍëÀÂÂÂP®BlockStatementÍ6Íë‘]¯SwitchStatementÍAÍäW°MemberExpressionÍIÍWU®ThisExpressionÍIÍMNªIdentifierÍNÍW©enemyTypeÂÂ“^ªSwitchCaseÍhÍˆ‘\¯ReturnStatementÍ}ÍˆX§LiteralÍ„Í‡ÌÈ£200W°MemberExpressionÍmÍ{NªIdentifierÍmÍv©EnemyTypeNªIdentifierÍwÍ{¤FASTÂÂ^ªSwitchCaseÍ–Í·‘\¯ReturnStatementÍ¬Í·X§LiteralÍ³Í¶Í,£300W°MemberExpressionÍ›ÍªNªIdentifierÍ›Í¤©EnemyTypeNªIdentifierÍ¥Íª¥HEAVYÂÂ^ªSwitchCaseÍÅÍÙ‘\¯ReturnStatementÍÎÍÙX§LiteralÍÕÍØÌd£100ÀÀ”Ôrc•¤type¥start£endªspecifiers¦source±ImportDeclaration 5’Ôrd•¤type¥start£end¨imported¥local¯ImportSpecifier	NªIdentifier	ªGameEntityNªIdentifier	ªGameEntityd¯ImportSpecifierNªIdentifier©DirectionNªIdentifier©DirectionX§Literal&4¬./GameEntity®'./GameEntity'c±ImportDeclaration7Ìf’d¯ImportSpecifierÌ@ÌFNªIdentifierÌ@ÌF¦BulletNªIdentifierÌ@ÌF¦Bulletd¯ImportSpecifierÌHÌSNªIdentifierÌHÌS«BulletOwnerNªIdentifierÌHÌS«BulletOwnerX§LiteralÌ[Ìe¨./Bulletª'./Bullet'c±ImportDeclarationÌhÍùÜ d¯ImportSpecifierÌqÌ{NªIdentifierÌqÌ{ªTANK_WIDTHNªIdentifierÌqÌ{ªTANK_WIDTHd¯ImportSpecifierÌ}ÌˆNªIdentifierÌ}Ìˆ«TANK_HEIGHTNªIdentifierÌ}Ìˆ«TANK_HEIGHTd¯ImportSpecifierÌŠÌ–NªIdentifierÌŠÌ–¬PLAYER_SPEEDNªIdentifierÌŠÌ–¬PLAYER_SPEEDd¯ImportSpecifierÌ˜Ì­NªIdentifierÌ˜Ì­µPLAYER_SHOOT_COOLDOWNNªIdentifierÌ˜Ì­µPLAYER_SHOOT_COOLDOWNd¯ImportSpecifierÌ¯ÌÀNªIdentifierÌ¯ÌÀ±ENEMY_BASIC_SPEEDNªIdentifierÌ¯ÌÀ±ENEMY_BASIC_SPEEDd¯ImportSpecifierÌÂÌÒNªIdentifierÌÂÌÒ°ENEMY_FAST_SPEEDNªIdentifierÌÂÌÒ°ENEMY_FAST_SPEEDd¯ImportSpecifierÌÔÌåNªIdentifierÌÔÌå±ENEMY_HEAVY_SPEEDNªIdentifierÌÔÌå±ENEMY_HEAVY_SPEEDd¯ImportSpecifierÌçÌûNªIdentifierÌçÌû´ENEMY_BASIC_COOLDOWNNªIdentifierÌçÌû´ENEMY_BASIC_COOLDOWNd¯ImportSpecifierÌıÍNªIdentifierÌıÍ³ENEMY_FAST_COOLDOWNNªIdentifierÌıÍ³ENEMY_FAST_COOLDOWNd¯ImportSpecifierÍÍ&NªIdentifierÍÍ&´ENEMY_HEAVY_COOLDOWNNªIdentifierÍÍ&´ENEMY_HEAVY_COOLDOWNd¯ImportSpecifierÍ(Í6NªIdentifierÍ(Í6®PLAYER_START_XNªIdentifierÍ(Í6®PLAYER_START_Xd¯ImportSpecifierÍ8ÍFNªIdentifierÍ8ÍF®PLAYER_START_YNªIdentifierÍ8ÍF®PLAYER_START_Yd¯ImportSpecifierÍHÍbNªIdentifierÍHÍbºPLAYER_INVINCIBLE_DURATIONNªIdentifierÍHÍbºPLAYER_INVINCIBLE_DURATIONd¯ImportSpecifierÍdÍuNªIdentifierÍdÍu±COLOR_PLAYER_BODYNªIdentifierÍdÍu±COLOR_PLAYER_BODYd¯ImportSpecifierÍwÍNªIdentifierÍwÍ¶COLOR_PLAYER_HIGHLIGHTNªIdentifierÍwÍ¶COLOR_PLAYER_HIGHLIGHTd¯ImportSpecifierÍÍ NªIdentifierÍÍ ±COLOR_ENEMY_BASICNªIdentifierÍÍ ±COLOR_ENEMY_BASICd¯ImportSpecifierÍ¢Í²NªIdentifierÍ¢Í²°COLOR_ENEMY_FASTNªIdentifierÍ¢Í²°COLOR_ENEMY_FASTd¯ImportSpecifierÍ´ÍÅNªIdentifierÍ´ÍÅ±COLOR_ENEMY_HEAVYNªIdentifierÍ´ÍÅ±COLOR_ENEMY_HEAVYd¯ImportSpecifierÍÇÍÒNªIdentifierÍÇÍÒ«COLOR_TRACKNªIdentifierÍÇÍÒ«COLOR_TRACKd¯ImportSpecifierÍÔÍİNªIdentifierÍÔÍİ©COLOR_GUNNªIdentifierÍÔÍİ©COLOR_GUNX§LiteralÍåÍø±../util/Constants³'../util/Constants'c±ImportDeclarationÍûÍ2‘d¯ImportSpecifierÍÍNªIdentifierÍÍ«RenderLayerNªIdentifierÍÍ«RenderLayerX§LiteralÍÍ1¸../engine/CanvasRendererº'../engine/CanvasRenderer'

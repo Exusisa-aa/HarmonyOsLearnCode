@@ -1,0 +1,2320 @@
+{
+  "runtimeOS": "HarmonyOS",
+  "sdkInfo": "false:22:6.0.2.130:Release",
+  "fileList": {
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.UIAbility.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Ability.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.AbilityConstant.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Want.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.window.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.rpc.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entryability\\EntryAbility.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.AbilityLifecycleCallback.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.hilog.d.ts": {
+      "mtimeMs": 1776821260472.8252,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entryability\\EntryAbility.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.window.d.ts": {
+      "mtimeMs": 1776821535239.623,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\BaseContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimedia.image.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.node.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.ConfigurationConstant.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.bundleManager.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entryability\\EntryAbility.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.UIAbility.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.StartOptions.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.AbilityLifecycleCallback.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\component\\navigation.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.ability.featureAbility.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\folder_stack.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\nav_destination.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\navigation.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entryability\\EntryAbility.ts": {
+      "mtimeMs": 1773724623980.8816,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.UIAbility.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.hilog.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.window.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Ability.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.AbilityConstant.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Configuration.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.UIAbility.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.AbilityConstant.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.appManager.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.UIAbility.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Ability.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.EnvironmentCallback.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Want.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.UIAbility.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.bundleManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.dialogRequest.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\abilityResult.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ApplicationContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.unifiedDataChannel.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\FormEditExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\LiveFormExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.ability.featureAbility.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\startAbilityParameter.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AppServiceExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\embedded_component.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts": {
+      "mtimeMs": 1776821535431.7834,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\connectOptions.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.UIAbility.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.dialogRequest.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.AbilityConstant.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.AtomicServiceOptions.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.ConfigurationConstant.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIServiceProxy.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIServiceExtensionConnectCallback.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AbilityStartCallback.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimedia.image.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\AbilityInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\abilityResult.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\Context.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\HapModuleInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.OpenLinkOptions.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Want.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.StartOptions.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Configuration.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.window.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.UIAbility.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.observer.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\EmbeddableUIAbilityContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.rpc.d.ts": {
+      "mtimeMs": 1776821260585.0408,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.UIAbility.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimedia.image.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\connectOptions.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Configuration.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.ConfigurationConstant.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Ability.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.EnvironmentCallback.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AbilityStageContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.appManager.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ProcessInformation.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ApplicationStateObserver.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AbilityStateData.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AppStateData.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ProcessData.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.AbilityConstant.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ProcessInformation.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.appManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.bundleManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.window.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimedia.image.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.resourceManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.rpc.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.mediaquery.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.inspector.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.promptAction.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.router.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.observer.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\Context.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ApplicationContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\component\\navigation.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.componentSnapshot.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.dragController.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.unifiedDataChannel.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\dataAbilityHelper.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.ability.featureAbility.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\app\\context.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.rdb.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimodalInput.pointer.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\SceneResources.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\embedded_component.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\image.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\nav_destination.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\navigation.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\pattern_lock.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\video.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.web.webview.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.security.cert.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.security.cryptoFramework.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.print.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.preferences.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ProcessInformation.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.appManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.bundleManager.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.appManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ApplicationContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ApplicationStateObserver.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AppStateData.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AbilityStateData.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ProcessData.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.appManager.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AbilityStateData.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.appManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ApplicationStateObserver.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AppStateData.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.appManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ApplicationStateObserver.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ProcessData.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.appManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ApplicationStateObserver.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.bundleManager.d.ts": {
+      "mtimeMs": 1776821535167.8633,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\Metadata.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ElementName.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Want.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ApplicationInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\AbilityInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\BundleInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\HapModuleInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ExtensionAbilityInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\Skill.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ProcessInformation.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ApplicationInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\AbilityInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\BundleInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\HapModuleInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ExtensionAbilityInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.window.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.StartOptions.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\Metadata.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.bundleManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ApplicationInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\AbilityInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\HapModuleInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ExtensionAbilityInfo.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ElementName.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.bundleManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\connectOptions.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.CompletionHandler.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ApplicationInfo.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\Metadata.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\global\\resource.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.bundleManager.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.bundleManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\AbilityInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\BundleInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ExtensionAbilityInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\Context.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\AbilityInfo.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ApplicationInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\Metadata.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.bundleManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\Skill.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.bundleManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\HapModuleInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\BundleInfo.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ApplicationInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\HapModuleInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.bundleManager.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.bundleManager.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\HapModuleInfo.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\AbilityInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ExtensionAbilityInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\Metadata.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.bundleManager.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.bundleManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\BundleInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AbilityStageContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ExtensionAbilityInfo.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ApplicationInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\Metadata.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.bundleManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\Skill.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.bundleManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\HapModuleInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ExtensionContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\Skill.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.bundleManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\AbilityInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ExtensionAbilityInfo.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\global\\resource.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ApplicationInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.resourceManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Graphics.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.drawing.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\units.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.ConfigurationConstant.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Configuration.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.window.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ApplicationContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIExtensionContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\BaseContext.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.window.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\Context.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\app\\context.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.rdb.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.preferences.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimedia.image.d.ts": {
+      "mtimeMs": 1776821535360.5627,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.colorSpaceManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.resourceManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.rpc.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.window.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.drawableDescriptor.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.drawing.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.StartOptions.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.componentSnapshot.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.unifiedDataChannel.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\PhotoEditorExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimodalInput.pointer.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\common.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.web.webview.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts": {
+      "mtimeMs": 1776821535295.225,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.font.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.mediaquery.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.inspector.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.promptAction.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.router.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.componentUtils.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.node.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.animator.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.observer.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.animator.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.measure.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.componentSnapshot.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.dragController.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimedia.image.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimodalInput.pointer.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.window.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\BuilderNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\FrameNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\ComponentContent.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\NodeController.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\XComponentNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.node.d.ts": {
+      "mtimeMs": 1776821535542.7231,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\BuilderNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\BuilderNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\BuilderNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\BuilderNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\NodeController.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\FrameNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\FrameNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Graphics.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Graphics.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\RenderNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\XComponentNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Content.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\ComponentContent.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\ComponentContent.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\NodeContent.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.window.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\content_slot.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\node_container.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.colorSpaceManager.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimedia.image.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.drawing.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.resourceManager.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\global\\rawFileDescriptor.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\global\\resource.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.drawableDescriptor.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimedia.image.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\Context.d.ts",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\ResourceManager.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\global\\rawFileDescriptor.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.resourceManager.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.drawableDescriptor.d.ts": {
+      "mtimeMs": 1776821535428.7659,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimedia.image.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.resourceManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\image.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\tab_content.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.font.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.mediaquery.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.inspector.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.promptAction.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\action_sheet.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\alert_dialog.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\common.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\custom_dialog_controller.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.router.d.ts": {
+      "mtimeMs": 1776821535210.152,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.componentUtils.d.ts": {
+      "mtimeMs": 1776821535350.2556,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.animator.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.observer.d.ts": {
+      "mtimeMs": 1776821535134.327,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\component\\navigation.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.measure.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.componentSnapshot.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimedia.image.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.dragController.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.unifiedDataChannel.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts": {
+      "mtimeMs": 1776821535523.6758,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AbilityStageContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ApplicationContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\BaseContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\Context.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\FormExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\FormEditExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\LiveFormExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\EventHub.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\dataAbilityHelper.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AbilityStartCallback.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\connectOptions.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\VpnExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\EmbeddableUIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\PhotoEditorExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIServiceProxy.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIServiceExtensionConnectCallback.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AppServiceExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\abilityResult.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimodalInput.pointer.d.ts": {
+      "mtimeMs": 1776821535348.256,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimedia.image.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\BuilderNode.d.ts": {
+      "mtimeMs": 1776821535492.1084,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\FrameNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Graphics.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.node.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\ComponentContent.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\XComponentNode.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\NodeController.d.ts": {
+      "mtimeMs": 1776821260612.049,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\FrameNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Graphics.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.node.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\FrameNode.d.ts": {
+      "mtimeMs": 1776821535513.1746,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\ComponentContent.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\RenderNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Graphics.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Graphics.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\ComponentContent.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.node.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\BuilderNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\NodeController.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\XComponentNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\NodeContent.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\canvas.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Graphics.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.drawing.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.common2D.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\global\\resource.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.node.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\BuilderNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\FrameNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\RenderNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\NodeController.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\common.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\particle.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\units.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\RenderNode.d.ts": {
+      "mtimeMs": 1776821535504.9492,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Graphics.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.node.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\FrameNode.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\XComponentNode.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\BuilderNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\FrameNode.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.node.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Content.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.node.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\ComponentContent.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\NodeContent.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\ComponentContent.d.ts": {
+      "mtimeMs": 1776821535498.421,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\BuilderNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Content.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.node.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\FrameNode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\NodeContent.d.ts": {
+      "mtimeMs": 1776821535509.6184,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Content.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\FrameNode.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.node.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.drawing.d.ts": {
+      "mtimeMs": 1776821535206.497,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimedia.image.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.common2D.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.colorSpaceManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\global\\resource.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Graphics.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\canvas.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\image.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.text.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.common2D.d.ts": {
+      "mtimeMs": 1776821535540.2012,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Graphics.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.drawing.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.text.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\component\\navigation.d.ts": {
+      "mtimeMs": 1776821535034.6074,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.window.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.observer.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\connectOptions.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ElementName.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.rpc.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.ability.featureAbility.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AppServiceExtensionContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.dialogRequest.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Want.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.AtomicServiceOptions.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.CompletionHandlerForAtomicService.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.StartOptions.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIExtensionContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIServiceProxy.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIExtensionContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIServiceExtensionConnectCallback.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIExtensionContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AbilityStartCallback.d.ts": {
+      "mtimeMs": 1776821260573.8071,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\abilityResult.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.CompletionHandlerForAbilityStartCallback.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\abilityResult.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Want.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AbilityStartCallback.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\FormEditExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.ability.featureAbility.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\PhotoEditorExtensionContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\Context.d.ts": {
+      "mtimeMs": 1776821535434.3289,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\EventHub.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ApplicationInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ApplicationContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\BaseContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.resourceManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.contextConstant.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ApplicationContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AbilityStageContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\common.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.print.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.OpenLinkOptions.d.ts": {
+      "mtimeMs": 1776821260521.7783,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.CompletionHandler.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIExtensionContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.StartOptions.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.contextConstant.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimedia.image.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.bundleManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.CompletionHandler.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.window.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.AtomicServiceOptions.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AppServiceExtensionContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.CompletionHandlerForAtomicService.d.ts": {
+      "mtimeMs": 1776821260458.6458,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.AtomicServiceOptions.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.contextConstant.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.StartOptions.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\Context.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.CompletionHandler.d.ts": {
+      "mtimeMs": 1776821260609.2236,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ElementName.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.StartOptions.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.OpenLinkOptions.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.CompletionHandlerForAbilityStartCallback.d.ts": {
+      "mtimeMs": 1776821214489.2534,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AbilityStartCallback.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\EventHub.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\Context.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ApplicationContext.d.ts": {
+      "mtimeMs": 1776821260582.094,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\Context.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ProcessInformation.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.ConfigurationConstant.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Want.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.AbilityLifecycleCallback.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.EnvironmentCallback.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.ApplicationStateChangeCallback.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\Context.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.AbilityLifecycleCallback.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.UIAbility.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.window.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ApplicationContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.EnvironmentCallback.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.AbilityConstant.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Configuration.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ApplicationContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.ApplicationStateChangeCallback.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ApplicationContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.unifiedDataChannel.d.ts": {
+      "mtimeMs": 1776821535328.4976,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimedia.image.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Want.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.dragController.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIExtensionContext.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Want.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.StartOptions.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\abilityResult.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\connectOptions.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.AtomicServiceOptions.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.OpenLinkOptions.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.ConfigurationConstant.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIServiceProxy.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIServiceExtensionConnectCallback.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\FormEditExtensionContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AbilityStageContext.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\HapModuleInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Configuration.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\Context.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ExtensionContext.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\HapModuleInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Configuration.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\Context.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundleManager\\ExtensionAbilityInfo.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\FormExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\LiveFormExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\VpnExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\PhotoEditorExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AppServiceExtensionContext.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\FormExtensionContext.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ExtensionContext.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\FormEditExtensionContext.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Want.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\abilityResult.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\LiveFormExtensionContext.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Want.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\dataAbilityHelper.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\data\\rdb\\resultSet.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\dataAbilityOperation.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\dataAbilityResult.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.dataAbility.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.rdb.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.ability.featureAbility.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\VpnExtensionContext.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ExtensionContext.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\EmbeddableUIAbilityContext.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\UIAbilityContext.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\PhotoEditorExtensionContext.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\abilityResult.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimedia.image.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\AppServiceExtensionContext.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\ExtensionContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\connectOptions.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Want.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.StartOptions.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\data\\rdb\\resultSet.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\dataAbilityHelper.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.rdb.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\dataAbilityOperation.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.ability.featureAbility.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.dataAbility.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.rdb.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\dataAbilityHelper.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\dataAbilityResult.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\dataAbilityHelper.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.dataAbility.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.rdb.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\dataAbilityHelper.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\dataAbilityOperation.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.rdb.d.ts": {
+      "mtimeMs": 1776821535452.9302,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\data\\rdb\\resultSet.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\BaseContext.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\dataAbilityHelper.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\dataAbilityOperation.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.dataAbility.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.ability.featureAbility.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Want.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\startAbilityParameter.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\abilityResult.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\app\\appVersionInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\app\\context.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\dataAbilityHelper.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\connectOptions.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\app\\processInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.window.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\dataAbilityOperation.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\ability\\startAbilityParameter.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Want.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.ability.featureAbility.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\app\\appVersionInfo.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.ability.featureAbility.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\app\\context.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\app\\context.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\applicationInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\app\\processInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\elementName.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\BaseContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\hapModuleInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\app\\appVersionInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\abilityInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.ability.featureAbility.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\app\\processInfo.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.ability.featureAbility.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\app\\context.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\applicationInfo.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\moduleInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\customizeData.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\app\\context.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\abilityInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\bundleInfo.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\elementName.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\app\\context.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\hapModuleInfo.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\abilityInfo.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\app\\context.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\bundleInfo.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\abilityInfo.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\applicationInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\customizeData.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\app\\context.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\hapModuleInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\bundleInfo.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\applicationInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\abilityInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Want.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimedia.image.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\bundleInfo.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\app\\context.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\abilityInfo.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\moduleInfo.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\applicationInfo.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\customizeData.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\applicationInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\abilityInfo.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\bundleInfo.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\abilityInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\applicationInfo.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\bundle\\hapModuleInfo.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.bundle.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\model\\Tank.ets": {
+      "mtimeMs": 1773730660618.4177,
+      "children": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\model\\Bullet.ets"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\pages\\GamePage.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\model\\Bullet.ets": {
+      "mtimeMs": 1773724623411.184,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\pages\\GamePage.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\model\\Tank.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\model\\Wall.ets": {
+      "mtimeMs": 1773730660604.3994,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\pages\\GamePage.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\model\\Explosion.ets": {
+      "mtimeMs": 1773724623410.5737,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\pages\\GamePage.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\utils\\CollisionUtils.ets": {
+      "mtimeMs": 1773724623457.323,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\pages\\GamePage.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimodalInput.keyCode.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\pages\\GamePage.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\pages\\GamePage.ets": {
+      "mtimeMs": 1778147864484.8252,
+      "children": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\GameController.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\GameState.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\GameEntity.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Types.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Constants.ets",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimodalInput.keyCode.d.ts"
+      ],
+      "parent": [],
+      "error": true,
+      "errorCodes": [
+        28007
+      ]
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\action_sheet.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.promptAction.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.promptAction.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\alert_dialog.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.promptAction.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\canvas.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.drawing.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\FrameNode.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.uniformTypeDescriptor.d.ts": {
+      "mtimeMs": 1776821535320.2065,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimodalInput.intentionCode.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\ImageModifier.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\SymbolGlyphModifier.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.shape.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.matrix4.d.ts": {
+      "mtimeMs": 1776821535363.118,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\common.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\image.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.uiEffect.d.ts": {
+      "mtimeMs": 1776821535284.29,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.theme.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\common.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\with_theme.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\common.d.ts": {
+      "mtimeMs": 1776821536059.2988,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.dragController.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.dragController.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\Context.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimodalInput.pointer.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimedia.image.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.unifiedDataChannel.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.unifiedDataChannel.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.uniformTypeDescriptor.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.unifiedDataChannel.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.unifiedDataChannel.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimodalInput.intentionCode.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\ImageModifier.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\SymbolGlyphModifier.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.shape.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.shape.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.shape.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.shape.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.matrix4.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.observer.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.observer.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.observer.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.UIContext.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Graphics.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.uiEffect.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.uiEffect.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\ComponentContent.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.theme.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.promptAction.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.scene.d.ts": {
+      "mtimeMs": 1776821535152.3423,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\ScenePostProcessSettings.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\SceneTypes.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\SceneResources.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\SceneNodes.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\Scene.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\component3d.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\component3d.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.scene.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\ScenePostProcessSettings.d.ts": {
+      "mtimeMs": 1776821535545.7075,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.scene.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\SceneNodes.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\SceneTypes.d.ts": {
+      "mtimeMs": 1776821260638.3875,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.scene.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\SceneResources.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\SceneNodes.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\Scene.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\SceneResources.d.ts": {
+      "mtimeMs": 1776821260640.9883,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\SceneTypes.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.scene.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\SceneNodes.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\Scene.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\SceneNodes.d.ts": {
+      "mtimeMs": 1776821535548.723,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\SceneResources.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\SceneTypes.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\ScenePostProcessSettings.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\Scene.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.scene.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\Scene.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\Scene.d.ts": {
+      "mtimeMs": 1776821535551.709,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\SceneResources.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\SceneNodes.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\SceneTypes.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.scene.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\graphics3d\\SceneNodes.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\content_slot.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.node.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\custom_dialog_controller.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.promptAction.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\embedded_component.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Want.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.app.ability.Want.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\folder_stack.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.window.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\image.d.ts": {
+      "mtimeMs": 1776821536121.834,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.drawableDescriptor.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.drawing.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.drawing.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.matrix4.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\nav_destination.d.ts": {
+      "mtimeMs": 1776821536072.102,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.window.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\navigation.d.ts": {
+      "mtimeMs": 1776821536032.131,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.window.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\node_container.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.node.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\particle.d.ts": {
+      "mtimeMs": 1776821536024.447,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Graphics.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Graphics.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Graphics.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\pattern_lock.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\CommonModifier.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\tabs.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\tabs.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\CommonModifier.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\tab_content.d.ts": {
+      "mtimeMs": 1776821536085.9878,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.drawableDescriptor.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.text.d.ts": {
+      "mtimeMs": 1776821535400.225,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.drawing.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.common2D.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\text_common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.inputMethod.ExtraConfig.d.ts": {
+      "mtimeMs": 1776821490915.7827,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\text_common.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\text_common.d.ts": {
+      "mtimeMs": 1776821536061.8262,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.text.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.text.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.text.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.text.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.text.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.graphics.text.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.inputMethod.ExtraConfig.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.intl.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\time_picker.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\time_picker.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.intl.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\with_theme.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.arkui.theme.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\units.d.ts": {
+      "mtimeMs": 1776821536069.1018,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\global\\resource.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Graphics.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Graphics.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\arkui\\Graphics.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\video.d.ts": {
+      "mtimeMs": 1776821536097.388,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.web.webview.d.ts": {
+      "mtimeMs": 1776821535390.7144,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.security.cert.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.multimedia.image.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.print.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.web.netErrorList.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\web.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\declarations\\web.d.ts": {
+      "mtimeMs": 1776821536075.2493,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.web.webview.d.ts"
+      ],
+      "parent": [],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.security.cert.d.ts": {
+      "mtimeMs": 1776821535261.8433,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.security.cryptoFramework.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.web.webview.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.print.d.ts": {
+      "mtimeMs": 1776821260496.437,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\Context.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.web.webview.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.web.netErrorList.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.web.webview.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.security.cryptoFramework.d.ts": {
+      "mtimeMs": 1776821535270.0344,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.security.cert.d.ts"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\GameController.ets": {
+      "mtimeMs": 1778147698543.12,
+      "children": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\GameState.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\GameLoop.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\CanvasRenderer.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\ResourceManager.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Tank.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Bullet.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Terrain.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\PowerUp.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Explosion.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\GameEntity.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\level\\LevelLoader.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\CollisionSystem.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\AISystem.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\ScoreManager.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\PowerUpManager.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Types.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Constants.ets"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\pages\\GamePage.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\GameState.ets": {
+      "mtimeMs": 1778144367609.841,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\pages\\GamePage.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\GameController.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\GameLoop.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\GameEntity.ets": {
+      "mtimeMs": 1778147668079.0835,
+      "children": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\CanvasRenderer.ets"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\pages\\GamePage.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\GameController.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Tank.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Bullet.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Terrain.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\PowerUp.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Explosion.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\CollisionSystem.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\AISystem.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Constants.ets": {
+      "mtimeMs": 1778144220688.4717,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\pages\\GamePage.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\GameController.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\CanvasRenderer.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Tank.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Bullet.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Terrain.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\PowerUp.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\level\\LevelLoader.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\CollisionSystem.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\AISystem.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\ScoreManager.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\PowerUpManager.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\GameLoop.ets": {
+      "mtimeMs": 1778144368635.2173,
+      "children": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\GameState.ets"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\GameController.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\CanvasRenderer.ets": {
+      "mtimeMs": 1778145636357.9243,
+      "children": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Constants.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Types.ets"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\GameController.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Tank.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\GameEntity.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Bullet.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Terrain.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\PowerUp.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Explosion.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\ResourceManager.ets": {
+      "mtimeMs": 1778145595406.5193,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.resourceManager.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.util.d.ts",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Types.ets"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\GameController.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\level\\LevelLoader.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Tank.ets": {
+      "mtimeMs": 1778144751388.246,
+      "children": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\GameEntity.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Bullet.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Constants.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\CanvasRenderer.ets"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\GameController.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\level\\LevelLoader.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\CollisionSystem.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\AISystem.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\ScoreManager.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\PowerUpManager.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Bullet.ets": {
+      "mtimeMs": 1778144540637.493,
+      "children": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\GameEntity.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Constants.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\CanvasRenderer.ets"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\GameController.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Tank.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\CollisionSystem.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\AISystem.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Terrain.ets": {
+      "mtimeMs": 1778145760247.0085,
+      "children": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\GameEntity.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Constants.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\CanvasRenderer.ets"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\GameController.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\level\\LevelLoader.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\CollisionSystem.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\AISystem.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\PowerUp.ets": {
+      "mtimeMs": 1778144542674.6108,
+      "children": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\GameEntity.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Constants.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\CanvasRenderer.ets"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\GameController.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\CollisionSystem.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\PowerUpManager.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Explosion.ets": {
+      "mtimeMs": 1778144888959.9392,
+      "children": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\GameEntity.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\CanvasRenderer.ets"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\GameController.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\level\\LevelLoader.ets": {
+      "mtimeMs": 1778147646463.0012,
+      "children": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Terrain.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Tank.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\ResourceManager.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Types.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Constants.ets"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\GameController.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\CollisionSystem.ets": {
+      "mtimeMs": 1778145858497.2617,
+      "children": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\GameEntity.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Terrain.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Bullet.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Tank.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\PowerUp.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Types.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Constants.ets"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\GameController.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\AISystem.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\AISystem.ets": {
+      "mtimeMs": 1778145871045.6665,
+      "children": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Tank.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Tank.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\GameEntity.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Terrain.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Bullet.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\CollisionSystem.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Constants.ets"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\GameController.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\ScoreManager.ets": {
+      "mtimeMs": 1778146174720.9116,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.preferences.d.ts",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Constants.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Tank.ets"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\GameController.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\PowerUpManager.ets": {
+      "mtimeMs": 1778145897111.7805,
+      "children": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\PowerUp.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\entity\\Tank.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Constants.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Types.ets"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\GameController.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.util.d.ts": {
+      "mtimeMs": 1776821535455.931,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\ResourceManager.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.data.preferences.d.ts": {
+      "mtimeMs": 1761109925000,
+      "children": [
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\@ohos.base.d.ts",
+        "K:\\study\\HarmonyOs\\software\\DevEcoStudio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\api\\application\\BaseContext.d.ts"
+      ],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\ScoreManager.ets"
+      ],
+      "error": false
+    },
+    "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\util\\Types.ets": {
+      "mtimeMs": 1778146208656.0718,
+      "children": [],
+      "parent": [
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\pages\\GamePage.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\GameController.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\CanvasRenderer.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\engine\\ResourceManager.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\level\\LevelLoader.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\CollisionSystem.ets",
+        "K:\\study\\HarmonyOs\\code\\chenminghui_BattleCiity\\entry\\src\\main\\ets\\system\\PowerUpManager.ets"
+      ],
+      "error": false
+    }
+  }
+}

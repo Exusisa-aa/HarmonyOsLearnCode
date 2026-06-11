@@ -1,0 +1,10 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/Account/LoginPage",
+    "pages/Exam",
+    "pages/ExamSubject/ExamDetail",
+    "pages/ExamSubject/AnswerResult",
+    "pages/Profile"
+  ]
+}

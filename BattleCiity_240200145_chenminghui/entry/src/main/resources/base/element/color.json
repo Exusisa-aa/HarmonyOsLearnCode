@@ -1,0 +1,84 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#000000"
+    },
+    {
+      "name": "game_background",
+      "value": "#000000"
+    },
+    {
+      "name": "brick_color",
+      "value": "#B85C38"
+    },
+    {
+      "name": "steel_color",
+      "value": "#B0B0B0"
+    },
+    {
+      "name": "water_color",
+      "value": "#0000FF"
+    },
+    {
+      "name": "tree_color",
+      "value": "#228B22"
+    },
+    {
+      "name": "base_color",
+      "value": "#FFD700"
+    },
+    {
+      "name": "player_tank_color",
+      "value": "#00FF00"
+    },
+    {
+      "name": "enemy_normal_color",
+      "value": "#FF4444"
+    },
+    {
+      "name": "enemy_fast_color",
+      "value": "#FF8800"
+    },
+    {
+      "name": "enemy_heavy_color",
+      "value": "#888888"
+    },
+    {
+      "name": "bullet_color",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "hud_text_color",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "menu_bg_color",
+      "value": "#1A1A2E"
+    },
+    {
+      "name": "menu_button_color",
+      "value": "#16213E"
+    },
+    {
+      "name": "menu_button_text_color",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "powerup_speed_color",
+      "value": "#00FFAA"
+    },
+    {
+      "name": "powerup_shield_color",
+      "value": "#4488FF"
+    },
+    {
+      "name": "powerup_firepower_color",
+      "value": "#FF4444"
+    },
+    {
+      "name": "powerup_reinforce_color",
+      "value": "#FFD700"
+    }
+  ]
+}

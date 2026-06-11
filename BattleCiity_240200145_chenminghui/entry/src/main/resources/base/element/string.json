@@ -1,0 +1,88 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "Battle City 1985 - HarmonyOS Edition"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "Battle City Tank Game"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "Battle City"
+    },
+    {
+      "name": "game_title",
+      "value": "BATTLE CITY"
+    },
+    {
+      "name": "new_game",
+      "value": "New Game"
+    },
+    {
+      "name": "continue_game",
+      "value": "Continue"
+    },
+    {
+      "name": "settings",
+      "value": "Settings"
+    },
+    {
+      "name": "resume_game",
+      "value": "Resume"
+    },
+    {
+      "name": "restart_game",
+      "value": "Restart"
+    },
+    {
+      "name": "save_game",
+      "value": "Save Game"
+    },
+    {
+      "name": "main_menu",
+      "value": "Main Menu"
+    },
+    {
+      "name": "game_over",
+      "value": "GAME OVER"
+    },
+    {
+      "name": "level_complete",
+      "value": "LEVEL COMPLETE"
+    },
+    {
+      "name": "score_label",
+      "value": "SCORE"
+    },
+    {
+      "name": "lives_label",
+      "value": "LIVES"
+    },
+    {
+      "name": "level_label",
+      "value": "LEVEL"
+    },
+    {
+      "name": "no_save_data",
+      "value": "No save data found"
+    },
+    {
+      "name": "save_success",
+      "value": "Game saved!"
+    },
+    {
+      "name": "volume_label",
+      "value": "Volume"
+    },
+    {
+      "name": "sensitivity_label",
+      "value": "Sensitivity"
+    },
+    {
+      "name": "enemies_destroyed",
+      "value": "Enemies Destroyed"
+    }
+  ]
+}

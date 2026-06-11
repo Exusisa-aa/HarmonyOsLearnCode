@@ -1,0 +1,48 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "智题通"
+    },
+    {
+      "name": "remaining_questions",
+      "value": "剩余题目："
+    },
+    {
+      "name": "Welcome",
+      "value": "欢迎登录"
+    },
+    {
+      "name": "Login",
+      "value": "登录"
+    },
+    {
+      "name": "Reg",
+      "value": "注册"
+    },
+    {
+      "name": "answer_card",
+      "value": "答题卡"
+    },
+    {
+      "name": "question",
+      "value": "题目"
+    },
+    {
+      "name": "re_answer",
+      "value": "重新答题"
+    },
+    {
+      "name": "exam_list",
+      "value": "试卷列表"
+    }
+  ]
+}
